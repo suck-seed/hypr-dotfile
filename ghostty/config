@@ -1,0 +1,12 @@
+font-family = jetbrains mono nerd font
+theme = mocha.conf
+background-opacity = 0.95
+background-blur = true
+font-size = 12
+mouse-hide-while-typing = true
+
+
+# --- Other optional settings ---
+# Hide scrollbar and use nice padding
+window-padding-x = 8
+window-padding-y = 8
