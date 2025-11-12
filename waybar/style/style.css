@@ -4,8 +4,8 @@
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
     font-size: 16px;
-    min-height: 0; }
-
+    min-height: 0;
+}
 
 window#waybar {
     background: rgba(21, 18, 27, 0);
@@ -24,7 +24,7 @@ tooltip * {
     background: transparent;
 }
 
-tooltip label{
+tooltip label {
     color: #2b2b2c;
 }
 
@@ -90,7 +90,8 @@ tooltip label{
     padding: 0;
 }
 
-#custom-flag, #custom-weather {
+#custom-flag,
+#custom-weather {
     color: #faf4ed;
     background: #286983;
     font-weight: 600;
@@ -100,20 +101,29 @@ tooltip label{
     color: #9ccfd8;
 }
 
-#custom-cava, #custom-flag {
+#custom-cava,
+#custom-flag {
     padding: 0px 15px 0px 15px;
 }
 
-#network, #temperature, #backlight, #custom-launch_wofi {
+#network,
+#temperature,
+#backlight,
+#custom-launch_wofi {
     border-radius: 18px 0px 0px 18px;
 }
 
-#custom-weather, #custom-cava, #custom-flag {
+#custom-weather,
+#custom-cava,
+#custom-flag {
     border-radius: 18px;
     margin-right: 10px;
 }
 
-#custom-light_dark, #workspaces, #pulseaudio.microphone, #battery {
+#custom-light_dark,
+#workspaces,
+#pulseaudio.microphone,
+#battery {
     border-radius: 0px 20px 20px 0px;
     margin-right: 10px;
 }
@@ -134,13 +144,13 @@ tooltip label{
     color: green;
 }
 
-
 #workspaces {
     padding-right: 0px;
     padding-left: 5px;
 }
 
-#bluetooth.on, #bluetooth.connected {
+#bluetooth.on,
+#bluetooth.connected {
     color: blue;
 }
 
@@ -153,7 +163,6 @@ tooltip label{
     border-left: 0px;
     border-right: 0px;
 }
-
 
 #custom-launch_wofi {
     color: #407cdd;

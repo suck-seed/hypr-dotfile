@@ -47,6 +47,7 @@ mainbox {
 
 imagebox {
     padding:                     20px;
+
     background-color:            transparent;
     background-image:            url("~/.config/rofi/wallpaper.jpg", height);
     orientation:                 vertical;

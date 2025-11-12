@@ -39,7 +39,6 @@ tooltip label {
 
 #workspaces button.active {
     color: #cdd6f4;
-
 }
 
 #workspaces button.focused {
@@ -90,11 +89,15 @@ tooltip label {
     padding: 0;
 }
 
-#custom-flag, #custom-weather {
+#custom-flag,
+#custom-weather {
     background: #393552;
 }
 
-#network, #temperature, #backlight, #custom-launch_wofi {
+#network,
+#temperature,
+#backlight,
+#custom-launch_wofi {
     border-radius: 18px 0px 0px 18px;
 }
 
@@ -102,7 +105,8 @@ tooltip label {
     color: #f6c177;
 }
 
-#custom-cava, #custom-flag {
+#custom-cava,
+#custom-flag {
     padding: 0px 15px 0px 15px;
 }
 
@@ -110,12 +114,18 @@ tooltip label {
     color: #eb6f92;
 }
 
-#clock, #custom-weather, #custom-cava, #custom-flag {
+#clock,
+#custom-weather,
+#custom-cava,
+#custom-flag {
     border-radius: 18px;
     margin-right: 10px;
 }
 
-#custom-light_dark, #workspaces, #pulseaudio.microphone, #battery {
+#custom-light_dark,
+#workspaces,
+#pulseaudio.microphone,
+#battery {
     border-radius: 0px 18px 18px 0px;
     margin-right: 10px;
 }
@@ -136,13 +146,13 @@ tooltip label {
     color: #afd69b;
 }
 
-
 #workspaces {
     padding-right: 0px;
     padding-left: 5px;
 }
 
-#bluetooth.on, #bluetooth.connected {
+#bluetooth.on,
+#bluetooth.connected {
     color: #3e8fb0;
 }
 
@@ -159,7 +169,6 @@ tooltip label {
 #window {
     margin-right: 20px;
 }
-
 
 #custom-launch_wofi {
     color: #407cdd;
