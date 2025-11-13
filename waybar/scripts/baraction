@@ -16,21 +16,15 @@ fi
 # ------------------------------------ WAYBAR
 ln -sf ~/.config/waybar/style/style$SWITCHTO.css ~/.config/waybar/style.css
 
-# ------------------------------------ ROFI
-ln -sf ~/.config/rofi/style/style$SWITCHTO.rasi ~/.config/rofi/style.rasi
-
-# ------------------------------------ FASTFETCH
-ln -sf ~/.config/fastfetch/style/style$SWITCHTO.jsonc ~/.config/fastfetch/config.jsonc
-
-# ------------------------------------ KITTY
-ln -sf ~/.config/kitty/style/$KITTYTHEME.conf ~/.config/kitty/style.conf
-
-# ------------------------------------ GHOSTTY
-ln -sf ~/.config/ghostty/themes/$KITTYTHEME.conf ~/.config/ghostty/themes/style.conf
-
-# ------------------------------------ XFCE
-xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita$SWITCHTO"
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Adwaita$SWITCHTO"
+# ------------------------------------ BACKGROUND
+BG_PATH="$HOME/.config/hypr/wallpapers/wallpaper.jpg"
+ln -sf ~/.config/hypr/wallpapers/themes/images$SWITCHTO/link "$BG_PATH"
+magick ~/.config/hypr/wallpapers/wallpaper.jpg -resize 2300x1294\> -quality 85 ~/.config/rofi/wallpaper.jpg
+cp ~/.config/rofi/wallpaper.jpg ~/.config/wlogout/wallpaper.jpg
+magick ~/.config/wlogout/wallpaper.jpg -blur 0x8 ~/.config/wlogout/wallpaper.jpg
+swww img "$BG_PATH" --transition-type any --transition-duration 2
+#update the sddm image
+ln -sf /usr/share/sddm/themes/sdt/Backgrounds/wallpaper$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
 
 # ------------------------------------ GTK
 if [ "$SWITCHTO" = "-dark" ]; then
@@ -40,19 +34,12 @@ if [ "$SWITCHTO" = "-dark" ]; then
 else
     gsettings set org.gnome.desktop.interface color-scheme "default"
     gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
-
 fi
 
-# ------------------------------------ FLATPAK
-if command -v flatpak >/dev/null; then
-  if [ "$SWITCHTO" = "-dark" ]; then
-    flatpak override --user --env=GTK_THEME=Adwaita:dark
-  else
-    flatpak override --user --env=GTK_THEME=Adwaita
-  fi
-fi
+# ------------------------------------ GHOSTTY
+ln -sf ~/.config/ghostty/themes/$KITTYTHEME.conf ~/.config/ghostty/themes/style.conf
 
-   # GHOSTY RELOAD
+#------------------------------------- GHOSTY RELOAD
 if pgrep -x ghostty &> /dev/null; then
   ghostty_addresses=$(hyprctl clients -j | jq -r '.[] | select(.class == "com.mitchellh.ghostty") | .address')
 
@@ -74,18 +61,18 @@ if pgrep -x ghostty &> /dev/null; then
   fi
 fi
 
+# ------------------------------------ FASTFETCH
+ln -sf ~/.config/fastfetch/style/style$SWITCHTO.jsonc ~/.config/fastfetch/config.jsonc
 
-# ------------------------------------ BACKGROUND
-BG_PATH="$HOME/.config/hypr/wallpapers/wallpaper.jpg"
-ln -sf ~/.config/hypr/wallpapers/themes/images$SWITCHTO/link "$BG_PATH"
-magick ~/.config/hypr/wallpapers/wallpaper.jpg -resize 2300x1294\> -quality 85 ~/.config/rofi/wallpaper.jpg
-cp ~/.config/rofi/wallpaper.jpg ~/.config/wlogout/wallpaper.jpg
-magick ~/.config/wlogout/wallpaper.jpg -blur 0x8 ~/.config/wlogout/wallpaper.jpg
+# ------------------------------------ ROFI
+ln -sf ~/.config/rofi/style/style$SWITCHTO.rasi ~/.config/rofi/style.rasi
 
-swww img "$BG_PATH" --transition-type any --transition-duration 2
+# ------------------------------------ KITTY
+ln -sf ~/.config/kitty/style/$KITTYTHEME.conf ~/.config/kitty/style.conf
 
-#update the sddm image
-ln -sf /usr/share/sddm/themes/sdt/Backgrounds/wallpaper$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
+# ------------------------------------ XFCE
+xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita$SWITCHTO"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Adwaita$SWITCHTO"
 
 # ------------------------------------ HYPRLOCK
 ln -sf ~/.config/hypr/hyprlock/hyprlock$SWITCHTO.conf ~/.config/hypr/hyprlock.conf
