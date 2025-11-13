@@ -4,7 +4,7 @@
 THEMEIS=$(readlink -f ~/.config/waybar/style.css | cut -d '-' -f2)
 
 
-#if the theme is not dark then we need to switch to it
+# ------------------------------------ VARIABLES
 if [ $THEMEIS != "dark.css" ]; then
     SWITCHTO="-dark"
     KITTYTHEME="mocha"
@@ -13,30 +13,37 @@ else
     KITTYTHEME="latte"
 fi
 
-#set the waybar theme
+# ------------------------------------ WAYBAR
 ln -sf ~/.config/waybar/style/style$SWITCHTO.css ~/.config/waybar/style.css
 
-# Change rofi theme
+# ------------------------------------ ROFI
 ln -sf ~/.config/rofi/style/style$SWITCHTO.rasi ~/.config/rofi/style.rasi
 
-# Change theme of fastfetch
+# ------------------------------------ FASTFETCH
 ln -sf ~/.config/fastfetch/style/style$SWITCHTO.jsonc ~/.config/fastfetch/config.jsonc
 
-# Change theme of kitty
+# ------------------------------------ KITTY
 ln -sf ~/.config/kitty/style/$KITTYTHEME.conf ~/.config/kitty/style.conf
 
-# Change ghostyy theme
+# ------------------------------------ GHOSTTY
 ln -sf ~/.config/ghostty/themes/$KITTYTHEME.conf ~/.config/ghostty/themes/style.conf
 
-#set the xfce theme
+# ------------------------------------ XFCE
 xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita$SWITCHTO"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Adwaita$SWITCHTO"
 
-#set the GTK theme
-gsettings set org.gnome.desktop.interface gtk-theme "rose-pine$ROSEPINE-gtk"
-gsettings set org.gnome.desktop.interface icon-theme "rose-pine$ROSEPINE-gtk"
+# ------------------------------------ GTK
+if [ "$SWITCHTO" = "-dark" ]; then
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+    gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
 
-# Flatpaks
+else
+    gsettings set org.gnome.desktop.interface color-scheme "default"
+    gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
+
+fi
+
+# ------------------------------------ FLATPAK
 if command -v flatpak >/dev/null; then
   if [ "$SWITCHTO" = "-dark" ]; then
     flatpak override --user --env=GTK_THEME=Adwaita:dark
@@ -45,8 +52,30 @@ if command -v flatpak >/dev/null; then
   fi
 fi
 
+   # GHOSTY RELOAD
+if pgrep -x ghostty &> /dev/null; then
+  ghostty_addresses=$(hyprctl clients -j | jq -r '.[] | select(.class == "com.mitchellh.ghostty") | .address')
 
-#change the background image and be cool about it ;)
+  if [[ -n "$ghostty_addresses" ]]; then
+    # Save current active window
+    current_window=$(hyprctl activewindow -j | jq -r '.address')
+
+    # Focus each ghostty window and send reload key combo
+    while IFS= read -r address; do
+      hyprctl dispatch focuswindow "address:$address"
+      sleep 0.1
+      hyprctl dispatch sendshortcut "CTRL SHIFT, comma, address:$address"
+    done <<< "$ghostty_addresses"
+
+    # Return focus to original window
+    if [[ -n "$current_window" ]]; then
+      hyprctl dispatch focuswindow "address:$current_window"
+    fi
+  fi
+fi
+
+
+# ------------------------------------ BACKGROUND
 BG_PATH="$HOME/.config/hypr/wallpapers/wallpaper.jpg"
 ln -sf ~/.config/hypr/wallpapers/themes/images$SWITCHTO/link "$BG_PATH"
 magick ~/.config/hypr/wallpapers/wallpaper.jpg -resize 2300x1294\> -quality 85 ~/.config/rofi/wallpaper.jpg
@@ -58,8 +87,8 @@ swww img "$BG_PATH" --transition-type any --transition-duration 2
 #update the sddm image
 ln -sf /usr/share/sddm/themes/sdt/Backgrounds/wallpaper$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
 
-# Hyprlock theme
+# ------------------------------------ HYPRLOCK
 ln -sf ~/.config/hypr/hyprlock/hyprlock$SWITCHTO.conf ~/.config/hypr/hyprlock.conf
 
-#restart the waybar
-killall -SIGUSR2 waybar
+# ------------------------------------ RESTART WAYBAR
+# killall -SIGUSR2 waybar
