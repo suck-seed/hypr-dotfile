@@ -1,0 +1,4 @@
+[[shades]]
+name = "rounded"
+default = true  # use this shader when nothing else is scheduled
+

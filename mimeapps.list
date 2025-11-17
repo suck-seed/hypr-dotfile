@@ -15,6 +15,7 @@ x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 application/json=dev.zed.Zed.desktop
 image/jpeg=org.gnome.Loupe.desktop
 image/png=org.gnome.Loupe.desktop
+application/pdf=org.gnome.Papers.desktop
 
 [Added Associations]
 x-scheme-handler/http=zen.desktop;
@@ -30,3 +31,4 @@ application/x-extension-xht=zen.desktop;
 application/json=dev.zed.Zed.desktop;
 image/jpeg=org.gnome.Loupe.desktop;
 image/png=org.gnome.Loupe.desktop;
+application/pdf=org.gnome.Papers.desktop;
