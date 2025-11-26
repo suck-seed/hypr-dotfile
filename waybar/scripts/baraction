@@ -18,14 +18,31 @@ ln -sf ~/.config/waybar/style/style$SWITCHTO.css ~/.config/waybar/style.css
 
 
 # ------------------------------------ BACKGROUND
+#BG_PATH="$HOME/.config/hypr/wallpapers/wallpaper.jpg"
+#ln -sf ~/.config/hypr/wallpapers/themes/images$SWITCHTO/link "$BG_PATH"
+#magick ~/.config/hypr/wallpapers/wallpaper.jpg -resize 2300x1294\> -quality 85 ~/.config/rofi/wallpaper.jpg
+#cp ~/.config/rofi/wallpaper.jpg ~/.config/wlogout/wallpaper.jpg
+#magick ~/.config/wlogout/wallpaper.jpg -blur 0x8 ~/.config/wlogout/wallpaper.jpg
+#swww img "$BG_PATH" --transition-type any --transition-duration 2
+
+##update the sddm image
+
+
+# ------------------------------------ BACKGROUND
 BG_PATH="$HOME/.config/hypr/wallpapers/wallpaper.jpg"
 ln -sf ~/.config/hypr/wallpapers/themes/images$SWITCHTO/link "$BG_PATH"
-magick ~/.config/hypr/wallpapers/wallpaper.jpg -resize 2300x1294\> -quality 85 ~/.config/rofi/wallpaper.jpg
-cp ~/.config/rofi/wallpaper.jpg ~/.config/wlogout/wallpaper.jpg
-magick ~/.config/wlogout/wallpaper.jpg -blur 0x8 ~/.config/wlogout/wallpaper.jpg
-swww img "$BG_PATH" --transition-type any --transition-duration 2
-#update the sddm image
-ln -sf /usr/share/sddm/themes/sdt/Backgrounds/wallpaper$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
+
+# Show new wallpaper immediately
+swww img "$BG_PATH" --transition-type any --transition-duration 2 &
+
+# Generate rofi / wlogout versions in the background
+(
+  magick "$BG_PATH" -resize 2300x1294\> -quality 85 ~/.config/rofi/wallpaper.jpg
+  cp ~/.config/rofi/wallpaper.jpg ~/.config/wlogout/wallpaper.jpg
+  magick ~/.config/wlogout/wallpaper.jpg -blur 0x8 ~/.config/wlogout/wallpaper.jpg
+  ln -sf /usr/share/sddm/themes/sdt/Backgrounds/wallpaper$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
+) &
+
 
 
 
@@ -54,7 +71,7 @@ if pgrep -x ghostty &> /dev/null; then
     # Focus each ghostty window and send reload key combo
     while IFS= read -r address; do
       hyprctl dispatch focuswindow "address:$address"
-      sleep 0.1
+      sleep 0.03
       hyprctl dispatch sendshortcut "CTRL SHIFT, comma, address:$address"
     done <<< "$ghostty_addresses"
 
