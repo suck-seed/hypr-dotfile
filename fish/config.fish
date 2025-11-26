@@ -14,3 +14,6 @@ fnm env --use-on-cd | source
 function dubuntu
 	distrobox-enter ubuntu-class -- bash
 end
+
+
+set -gx PATH $PATH ~/.local/bin

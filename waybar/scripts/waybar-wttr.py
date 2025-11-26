@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
 import json
-import requests
 from datetime import datetime
+
+import requests
 from environs import env
 
 data = {}

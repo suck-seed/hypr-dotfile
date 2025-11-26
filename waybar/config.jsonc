@@ -11,7 +11,7 @@
     "hyprland/workspaces",
     "custom/cava",
     "custom/flag",
-    "custom/weather",\
+    "custom/weather"
   ],
   "modules-center": ["clock"],
   "modules-right": [
@@ -42,7 +42,7 @@
   "custom/cava": {
     "exec": "~/.config/waybar/scripts/cava.sh",
     "format": "{}",
-    "on-click": "kitty cava"
+    "on-click": "ghostty -e cava"
   },
 
   "custom/updates": {
@@ -73,7 +73,7 @@
     "format": "{}",
     "interval": 60,
     "return-type": "json",
-    "exec": "~/.config/waybar/scripts/venv/bin/python3 ~/.config/waybar/scripts/waybar-wttr.py"
+    "exec": " ~/.venvs/waybar-weather/bin/python ~/.config/waybar/scripts/waybar-wttr.py"
   },
 
   "clock": {
@@ -88,7 +88,7 @@
         "today": "<span color='#f6c177'><b>{}</b></span>"
       }
     },
-    "on-click": "kitty tty-clock -c -C 5",
+    "on-click": "ghostty -e tty-clock -c -C 5",
     "height": 26
   },
 
@@ -148,11 +148,11 @@
     "format": "  {temperatureC}°C",
     "critical-threshold": 70,
     "format-critical": " {temperatureC}°C",
-    "on-click": "kitty btop"
+    "on-click": "ghostty -e btop"
   },
 
   "network": {
-    "on-click": "kitty nmtui",
+    "on-click": "ghostty -e nmtui",
     "format-icons": [" 󰤯", " 󰤟", " 󰤢", " 󰤥", " 󰤨"],
     "format": "{icon}",
     "format-wifi": "{icon}",

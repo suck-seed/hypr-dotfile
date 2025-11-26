@@ -1,0 +1,4 @@
+[[shades]]
+name = "rounded"
+path = "~/.config/hypr/shaders/rounded.glsl"
+default = true
