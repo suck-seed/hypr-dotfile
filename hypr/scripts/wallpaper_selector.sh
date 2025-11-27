@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-THEMEIS=$(readlink -f ~/.config/waybar/style.css | cut -d '-' -f2)
+CURRENT_STYLE=$(readlink -f ~/.config/waybar/style.css 2>/dev/null || echo "")
+CURRENT_BASENAME=$(basename "$CURRENT_STYLE")
 
-if [ $THEMEIS != "dark.css" ]; then
-  SWITCHTO=""
+if [[ "$CURRENT_BASENAME" == *"-dark.css"   ]]; then
+    SWITCHTO="-dark"
 else
-  SWITCHTO="-dark"
+    SWITCHTO=""
 fi
 
 WALLPAPER_DIR="$HOME/.config/hypr/wallpapers/themes/images$SWITCHTO"

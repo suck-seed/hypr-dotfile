@@ -41,6 +41,8 @@ link ~/hypr-dotfile/btop ~/.config/btop
 link ~/hypr-dotfile/bleachbit ~/.config/bleachbit
 link ~/hypr-dotfile/gtk-3.0 ~/.config/gtk-3.0
 link ~/hypr-dotfile/gtk-4.0 ~/.config/gtk-4.0
+link ~/hypr-dotfile/bongocat.conf ~/.config/bongocat.conf
+link ~/hypr-dotfile/zed ~/.config/zed
 
 # BASE PACKAGES
 echo "[*] Installing core..."
@@ -48,7 +50,7 @@ sudo pacman -Syy --needed base-devel git mesa vulkan-radeon
 
 # HYPRLAND CORE
 echo "[*] Installing Hyprland..."
-sudo pacman -S --needed hyprland hyprlock hyprshade hypridle
+sudo pacman -S --needed hyprland hyprlock hypridle
 
 # USED IN WAYBAR
 echo "[*] Installing waybar and related packages..."
@@ -65,7 +67,7 @@ sudo pacman -S --needed pipewire pipewire-pulse wireplumber pavucontrol
 
 # UTILITIES
 echo "[*] Installing essential utilities..."
-sudo pacman -S --needed swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland networkmanager network-manager-applet playerctl pamixer brightnessctl udiskie wdisplays hyprpolkitagent wltcl wlogout libnotify ntfs-3g sddm os-prober python
+sudo pacman -S --needed swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland networkmanager network-manager-applet playerctl pamixer brightnessctl udiskie wdisplays hyprpolkitagent wlogout libnotify ntfs-3g sddm os-prober python
 
 echo "[*] Setting hyprland portal as default..."
 sudo tee /usr/share/xdg-desktop-portal/portals.conf >/dev/null <<EOF
@@ -90,7 +92,7 @@ sudo pacman -S rofi
 # APPLICATIONS (dev)
 echo "[*] Installing essential applications croskie..."
 sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker
-paru -S spotify helium-browser-bin zen-browser-bin
+paru -S helium-browser-bin zen-browser-bin
 
 # APPLICATION GAME
 echo "[*] Installing steam, finally..."

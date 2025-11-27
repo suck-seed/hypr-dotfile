@@ -1,15 +1,16 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Check which waybar theme is set
-THEMEIS=$(readlink -f ~/.config/waybar/style.css | cut -d '-' -f2)
+CURRENT_STYLE=$(readlink -f ~/.config/waybar/style.css 2>/dev/null || echo "")
+CURRENT_BASENAME=$(basename "$CURRENT_STYLE")
 
 # ------------------------------------ VARIABLES
-if [ $THEMEIS != "dark.css" ]; then
-    SWITCHTO="-dark"
-    KITTYTHEME="mocha"
-else
+if [[ "$CURRENT_BASENAME" == *"-dark.css"  ]]; then
     SWITCHTO=""
     KITTYTHEME="latte"
+else
+    SWITCHTO="-dark"
+    KITTYTHEME="mocha"
 fi
 
 # ------------------------------------ WAYBAR
@@ -40,7 +41,7 @@ swww img "$BG_PATH" --transition-type any --transition-duration 2 &
   magick "$BG_PATH" -resize 2300x1294\> -quality 85 ~/.config/rofi/wallpaper.jpg
   cp ~/.config/rofi/wallpaper.jpg ~/.config/wlogout/wallpaper.jpg
   magick ~/.config/wlogout/wallpaper.jpg -blur 0x8 ~/.config/wlogout/wallpaper.jpg
-  ln -sf /usr/share/sddm/themes/sdt/Backgrounds/wallpaper$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
+  # ln -sf /usr/share/sddm/themes/sdt/Backgrounds/wallpaper$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
 ) &
 
 
