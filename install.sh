@@ -43,39 +43,57 @@ link ~/hypr-dotfile/gtk-3.0 ~/.config/gtk-3.0
 link ~/hypr-dotfile/gtk-4.0 ~/.config/gtk-4.0
 
 # BASE PACKAGES
+echo "[*] Installing core..."
 sudo pacman -Syy --needed base-devel git mesa vulkan-radeon
 
 # HYPRLAND CORE
+echo "[*] Installing Hyprland..."
 sudo pacman -S --needed hyprland hyprlock hyprshade hypridle
 
 # USED IN WAYBAR
+echo "[*] Installing waybar and related packages..."
 sudo pacman -S --needed waybar cava fastfetch btop
 paru -S bongocat
 
 # USED IN TERMINAL
+echo "[*] Installing fish and ghostty..."
 sudo pacman -S --needed fish ghostty
 
 # SOUND
+echo "[*] Installing sound packages..."
 sudo pacman -S --needed pipewire pipewire-pulse wireplumber pavucontrol
 
 # UTILITIES
+echo "[*] Installing essential utilities..."
 sudo pacman -S --needed swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland networkmanager network-manager-applet playerctl pamixer brightnessctl udiskie wdisplays hyprpolkitagent wltcl wlogout libnotify ntfs-3g sddm os-prober python
 
+echo "[*] Setting hyprland portal as default..."
+sudo tee /usr/share/xdg-desktop-portal/portals.conf >/dev/null <<EOF
+[preferred]
+default=hyprland
+gtk=gtk
+EOF
+
 # SCREENSHOT / CLIPBOARD
+echo "[*] Installing clipboard packages..."
 sudo pacman -S --needed slurp grim wl-clipboard wtype cliphist
 
 # THEME SWITCHER
+echo "[*] Installing Theme related packages..."
 sudo pacman -S --needed swww imagemagick jq patch
 
 # ROFI
-paru -S rofi-nerdy
+echo "[*] Installing rofi yippie..."
+paru -S rofi-nerdy rofi-emoji
 sudo pacman -S rofi
 
 # APPLICATIONS (dev)
+echo "[*] Installing essential applications croskie..."
 sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker
 paru -S spotify helium-browser-bin zen-browser-bin
 
 # APPLICATION GAME
+echo "[*] Installing steam, finally..."
 sudo pacman -S steam
 
 # FONTS
@@ -83,20 +101,19 @@ sudo pacman -S --needed inter-font
 paru -S apple-fonts
 
 # APPLICATION GNOME (love gnome apps)
+echo "[*] Installing GNOME applications, they pretty as hell..."
 sudo pacman -S --needed nwg-look gtk3 gtk4 gsettings-desktop-schemas adwaita-icon-theme dconf glib2 adwaita-cursors loupe papers file-roller gnome-text-editor
 
-sudo tee /usr/share/xdg-desktop-portal/portals.conf >/dev/null <<EOF
-[preferred]
-default=hyprland
-gtk=gtk
-EOF
+
 
 # BATTERY CARE
+echo "[*] Akchinnn, gotta install battery care type shit..."
 sudo pacman -S --needed asusctl
 sudo asusctl -c 80 ## limit to 80%
-# disable power-profile-daemon
-sudo systemctl mask power-profiles-daemon
+
+echo "[*] Me anad my bros hate power-profile-daemon, yank that shit..."
 sudo systemctl disable --now power-profiles-daemon
+sudo systemctl mask power-profiles-daemon
 paru -S auto-cpufreq
 # sudo auto-cpufreq --install
 # do it later after installing everything
@@ -116,6 +133,9 @@ sudo usermod -aG docker $USER # docker
 sudo systemctl enable sddm.service
 sudo systemctl enable NetworkManager.service
 
+
+
+echo "[*] Done muji, thanks for waiting..."
 
 
 
