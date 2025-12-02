@@ -17,7 +17,6 @@ fi
 ln -sf ~/.config/waybar/style/style$SWITCHTO.css ~/.config/waybar/style.css
 
 
-
 # ------------------------------------ BACKGROUND
 #BG_PATH="$HOME/.config/hypr/wallpapers/wallpaper.jpg"
 #ln -sf ~/.config/hypr/wallpapers/themes/images$SWITCHTO/link "$BG_PATH"

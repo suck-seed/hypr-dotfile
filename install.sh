@@ -136,6 +136,8 @@ sudo systemctl enable sddm.service
 sudo systemctl enable NetworkManager.service
 
 
+# setup weather thingy
+
 
 echo "[*] Done muji, thanks for waiting..."
 
