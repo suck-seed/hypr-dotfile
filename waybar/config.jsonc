@@ -11,7 +11,7 @@
     "hyprland/workspaces",
     "custom/cava",
     "custom/flag",
-    "custom/weather"
+    "custom/weather",
   ],
   "modules-center": ["clock"],
   "modules-right": [
@@ -95,6 +95,7 @@
   "backlight": {
     "device": "amdgpu_bl1",
     "format": " {icon}",
+    "tooltip": false,
     "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-"
@@ -102,7 +103,7 @@
 
   "battery": {
     "states": {
-      "good": 95,
+      "good": 80,
       "warning": 30,
       "critical": 20
     },
@@ -114,8 +115,8 @@
   },
 
   "pulseaudio": {
-    "format": " {icon}",
-    "format-muted": " ",
+    "format": " {icon} ",
+    "format-muted": "  ",
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol",
     "on-scroll-up": "pamixer -i 5",
@@ -134,7 +135,7 @@
 
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": "  ",
+    "format-source": " ",
     "format-source-muted": " ",
     "on-click": "bash ~/.config/hypr/scripts/mute_mic_script.sh",
     "on-click-right": "pavucontrol",
