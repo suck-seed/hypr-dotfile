@@ -78,13 +78,13 @@
 
   "soft_wrap": "editor_width",
 
-  "vim_mode": true,
+  "vim_mode": false,
 
   // THEME
   "theme": {
     "mode": "dark",
     "light": "Fleet Light",
-    "dark": "Catppuccin Mocha"
+    "dark": "Fleet Light"
   },
 
   // PROJETC PANEL IN RIGHT
