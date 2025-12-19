@@ -3,6 +3,8 @@ font-size = 12
 font-thicken = true
 font-feature = -liga
 #adjust-cell-height = 4
+confirm-close-surface = false
+
 
 theme = style.conf
 background-opacity = 1

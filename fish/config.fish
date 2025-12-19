@@ -11,9 +11,5 @@ fish_add_path /home/suckseed/.spicetify
 # fnm integration
 fnm env --use-on-cd | source
 
-function dubuntu
-	distrobox-enter ubuntu-class -- bash
-end
-
-
 set -gx PATH $PATH ~/.local/bin
+starship init fish | source

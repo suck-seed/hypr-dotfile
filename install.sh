@@ -54,7 +54,7 @@ sudo pacman -S --needed hyprland hyprlock hypridle
 
 # USED IN WAYBAR
 echo "[*] Installing waybar and related packages..."
-sudo pacman -S --needed waybar cava fastfetch btop
+sudo pacman -S --needed waybar cava fastfetch btop tty-clock
 paru -S bongocat
 
 # USED IN TERMINAL
@@ -91,7 +91,7 @@ sudo pacman -S rofi
 
 # APPLICATIONS (dev)
 echo "[*] Installing essential applications croskie..."
-sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker
+sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker starship
 paru -S helium-browser-bin zen-browser-bin
 
 # APPLICATION GAME

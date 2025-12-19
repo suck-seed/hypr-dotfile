@@ -180,12 +180,12 @@
   "custom/bongocat": {
     "exec": "echo -e \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
     "format": "{}"
-  }
-  // "custom/flag": {
-  //     "tooltip": true,
-  //     "exec" : "~/.config/waybar/scripts/venv/bin/python3 ~/.config/waybar/scripts/flag.py",
-  //     "interval": 60,
-  //     "return-type" : "json",
-  //     "format": "{}"
-  // },
+  },
+   "custom/flag": {
+       "tooltip": true,
+       "exec" : "~/.venvs/waybar-weather/bin/python ~/.config/waybar/scripts/flag.py",
+       "interval": 60,
+       "return-type" : "json",
+       "format": "{}"
+   }
 }

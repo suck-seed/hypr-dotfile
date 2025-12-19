@@ -82,9 +82,9 @@
 
   // THEME
   "theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "Fleet Light",
-    "dark": "Fleet Light"
+    "dark": "Fleet Dark Purple"
   },
 
   // PROJETC PANEL IN RIGHT
