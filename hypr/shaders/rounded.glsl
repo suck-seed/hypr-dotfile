@@ -7,7 +7,7 @@ uniform vec2 screenSize;
 out vec4 fragColor;
 
 // Pixel radius for rounded corners
-const float radiusPx = 12.0;
+const float radiusPx = 10.0;
 // Anti-alias width in pixels (higher = softer edge)
 const float feather = 1.5;
 

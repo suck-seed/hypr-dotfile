@@ -104,9 +104,10 @@ paru -S apple-fonts
 
 # APPLICATION GNOME (love gnome apps)
 echo "[*] Installing GNOME applications, they pretty as hell..."
-sudo pacman -S --needed nwg-look gtk3 gtk4 gsettings-desktop-schemas adwaita-icon-theme dconf glib2 adwaita-cursors loupe papers file-roller gnome-text-editor
+sudo pacman -S --needed nwg-look gtk3 gtk4 gsettings-desktop-schemas adwaita-icon-theme dconf glib2 adwaita-cursors loupe papers file-roller gnome-text-editor showtime
 
-
+# APPLICATION OTHERS
+paru -S stremio
 
 # BATTERY CARE
 echo "[*] Akchinnn, gotta install battery care type shit..."
