@@ -91,7 +91,7 @@ sudo pacman -S rofi
 
 # APPLICATIONS (dev)
 echo "[*] Installing essential applications croskie..."
-sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker starship kdeconnect
+sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker starship kdeconnect jdk-openjdk
 paru -S helium-browser-bin zen-browser-bin
 
 # APPLICATION GAME
@@ -104,7 +104,7 @@ paru -S apple-fonts
 
 # APPLICATION GNOME (love gnome apps)
 echo "[*] Installing GNOME applications, they pretty as hell..."
-sudo pacman -S --needed nwg-look gtk3 gtk4 gsettings-desktop-schemas adwaita-icon-theme dconf glib2 adwaita-cursors loupe papers file-roller gnome-text-editor showtime
+sudo pacman -S --needed nwg-look gtk3 gtk4 gsettings-desktop-schemas adwaita-icon-theme dconf glib2 adwaita-cursors loupe papers file-roller gnome-text-editor showtime gnome-boxes gnome-font-viewer gnome-calculator
 
 # APPLICATION OTHERS
 paru -S stremio
