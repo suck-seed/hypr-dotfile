@@ -135,8 +135,8 @@
 
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": " ",
-    "format-source-muted": " ",
+    "format-source": " ",
+    "format-source-muted": "  ",
     "on-click": "bash ~/.config/hypr/scripts/mute_mic_script.sh",
     "on-click-right": "pavucontrol",
     "on-scroll-up": "pamixer --default-source -i 5",

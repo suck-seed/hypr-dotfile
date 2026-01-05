@@ -50,7 +50,7 @@ sudo pacman -Syy --needed base-devel git mesa vulkan-radeon
 
 # HYPRLAND CORE
 echo "[*] Installing Hyprland..."
-sudo pacman -S --needed hyprland hyprlock hypridle
+sudo pacman -S --needed hyprland hyprlock hypridle hyprsunset gdm
 
 # USED IN WAYBAR
 echo "[*] Installing waybar and related packages..."
@@ -67,7 +67,7 @@ sudo pacman -S --needed pipewire pipewire-pulse wireplumber pavucontrol
 
 # UTILITIES
 echo "[*] Installing essential utilities..."
-sudo pacman -S --needed swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland networkmanager network-manager-applet playerctl pamixer brightnessctl udiskie wdisplays wlogout libnotify ntfs-3g sddm os-prober python hyprsunset gnome-keyring polkit-gnome
+sudo pacman -S --needed swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland networkmanager network-manager-applet playerctl pamixer brightnessctl udiskie wdisplays wlogout libnotify ntfs-3g os-prober python  gnome-keyring polkit-gnome
 
 echo "[*] Setting hyprland portal as default..."
 sudo tee /usr/share/xdg-desktop-portal/portals.conf >/dev/null <<EOF
@@ -114,30 +114,26 @@ echo "[*] Akchinnn, gotta install battery care type shit..."
 sudo pacman -S --needed asusctl
 sudo asusctl -c 80 ## limit to 80%
 
-echo "[*] Me anad my bros hate power-profile-daemon, yank that shit..."
-sudo systemctl disable --now power-profiles-daemon
-sudo systemctl mask power-profiles-daemon
-paru -S auto-cpufreq
-# sudo auto-cpufreq --install
+#echo "[*] Me anad my bros hate power-profile-daemon, yank that shit..."
+#sudo systemctl disable --now power-profiles-daemon
+#sudo systemctl mask power-profiles-daemon
+#paru -S auto-cpufreq
+#sudo auto-cpufreq --install
 # do it later after installing everything
-
 
 # Permissions
 chmod +x ~/hypr-dotfile/hypr/scripts/*
 chmod +x ~/hypr-dotfile/rofi/*.sh
 chmod +x ~/hypr-dotfile/waybar/scripts/*
 
-
 # ADD USERS TO GROUPS
 sudo usermod -a -G input $USER # for bongocat
 sudo usermod -aG docker $USER # docker
 
 # ENABLE SYSTEM SERVICES
-sudo systemctl enable sddm.service
-sudo systemctl enable NetworkManager.service
+# sudo systemctl enable NetworkManager.service
+sudo systemctl enable gdm.service
 
-
-# setup weather thingy
 
 
 echo "[*] Done muji, thanks for waiting..."
