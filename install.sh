@@ -131,7 +131,7 @@ sudo usermod -a -G input $USER # for bongocat
 sudo usermod -aG docker $USER # docker
 
 # ENABLE SYSTEM SERVICES
-# sudo systemctl enable NetworkManager.service
+sudo systemctl enable NetworkManager.service
 sudo systemctl enable gdm.service
 
 
