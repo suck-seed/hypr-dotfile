@@ -91,7 +91,7 @@ sudo pacman -S rofi
 
 # APPLICATIONS (dev)
 echo "[*] Installing essential applications croskie..."
-sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker starship kdeconnect jdk-openjdk
+sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker starship kdeconnect jdk-openjdk spotify
 paru -S helium-browser-bin zen-browser-bin
 
 # APPLICATION GAME
