@@ -91,8 +91,8 @@ sudo pacman -S rofi
 
 # APPLICATIONS (dev)
 echo "[*] Installing essential applications croskie..."
-sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker starship kdeconnect jdk-openjdk spotify
-paru -S helium-browser-bin zen-browser-bin
+sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker starship kdeconnect jdk-openjdk 
+paru -S helium-browser-bin zen-browser-bin spotify
 
 # APPLICATION GAME
 echo "[*] Installing steam, finally..."
@@ -112,7 +112,7 @@ paru -S stremio
 # BATTERY CARE
 echo "[*] Akchinnn, gotta install battery care type shit..."
 sudo pacman -S --needed asusctl
-sudo asusctl -c 80 ## limit to 80%
+#sudo asusctl -c 80 ## limit to 80%
 
 #echo "[*] Me anad my bros hate power-profile-daemon, yank that shit..."
 #sudo systemctl disable --now power-profiles-daemon
