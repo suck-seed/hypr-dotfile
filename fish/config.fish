@@ -13,3 +13,5 @@ fnm env --use-on-cd | source
 
 set -gx PATH $PATH ~/.local/bin
 starship init fish | source
+
+fish_add_path /home/nothing/.spicetify

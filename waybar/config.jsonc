@@ -73,7 +73,7 @@
     "format": "{}",
     "interval": 60,
     "return-type": "json",
-    "exec": " ~/.venvs/waybar-weather/bin/python ~/.config/waybar/scripts/waybar-wttr.py"
+    "exec": " ~/.venvs/waybar-stuffs/bin/python ~/hypr-dotfile/waybar/scripts/waybar-wttr.py"
   },
 
   "clock": {

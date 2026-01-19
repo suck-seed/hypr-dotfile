@@ -9,7 +9,7 @@ from environs import env
 data = {}
 
 # Get json
-f = open('/home/suckseed/.config/waybar/scripts/emotes.json', 'r')
+f = open('/home/nothing/hypr-dotfile/waybar/scripts/emotes.json', 'r')
 emote_map = json.load(f)
 f.close()
 
@@ -79,7 +79,7 @@ for l in pred_req['list']:
 
         data['tooltip'] += f" {pred_status} {round(temp)}° {pred_emote} H: {round(high)}° L: {round(low)}° \n"
 
-with open('/home/suckseed/.config/hypr/scripts/weather.json', 'w') as wttr_fp:
+with open('/home/nothing/hypr-dotfile/hypr/scripts/weather.json', 'w') as wttr_fp:
     json.dump(data, wttr_fp)
 
 print(json.dumps(data))

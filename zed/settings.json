@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
   "disable_ai": true,
   "inline_code_actions": true,
   "auto_signature_help": true,
@@ -84,7 +89,7 @@
   "theme": {
     "mode": "system",
     "light": "Fleet Light",
-    "dark": "Fleet Dark"
+    "dark": "Catppuccin Mocha"
   },
 
   // PROJETC PANEL IN RIGHT
@@ -125,7 +130,7 @@
 
   // scrollbar
   "scrollbar": {
-    "show": "always",
+    "show": "never",
     "search_results": true,
     "selected_symbol": true,
     "diagnostics": "information",

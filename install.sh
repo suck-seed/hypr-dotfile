@@ -67,7 +67,7 @@ sudo pacman -S --needed pipewire pipewire-pulse wireplumber pavucontrol
 
 # UTILITIES
 echo "[*] Installing essential utilities..."
-sudo pacman -S --needed swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland networkmanager network-manager-applet playerctl pamixer brightnessctl udiskie wdisplays wlogout libnotify ntfs-3g os-prober python  gnome-keyring polkit-gnome
+sudo pacman -S --needed swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland networkmanager network-manager-applet playerctl pamixer brightnessctl udiskie wdisplays wlogout libnotify ntfs-3g os-prober python  gnome-keyring polkit-gnome libvirt qemu pipewire-jack
 
 echo "[*] Setting hyprland portal as default..."
 sudo tee /usr/share/xdg-desktop-portal/portals.conf >/dev/null <<EOF
@@ -91,7 +91,7 @@ sudo pacman -S rofi
 
 # APPLICATIONS (dev)
 echo "[*] Installing essential applications croskie..."
-sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker starship kdeconnect jdk-openjdk 
+sudo pacman -S --needed neovim zed obsidian git go docker docker-compose lazygit lazydocker starship kdeconnect jdk-openjdk
 paru -S helium-browser-bin zen-browser-bin spotify
 
 # APPLICATION GAME
@@ -129,14 +129,16 @@ chmod +x ~/hypr-dotfile/waybar/scripts/*
 # ADD USERS TO GROUPS
 sudo usermod -a -G input $USER # for bongocat
 sudo usermod -aG docker $USER # docker
+sudo usermod -aG libvirt $USER # for libvirt gnome boxes
 
 # ENABLE SYSTEM SERVICES
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable gdm.service
+sudo systemctl enable libvirtd
 
 
 
-echo "[*] Done muji, thanks for waiting..."
+echo "[*] Done, thanks for waiting ig..."
 
 
 

@@ -39,10 +39,13 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 if [ "$SWITCHTO" = "-dark" ]; then
 
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-    gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
+    gsettings set org.gnome.desktop.interface icon-theme "Reversal-grey-dark"
+    #gsettings set org.gnome.desktop.interface widget-theme "MacTahoe-Dark"
 else
     gsettings set org.gnome.desktop.interface color-scheme "default"
-    gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
+    gsettings set org.gnome.desktop.interface icon-theme "Reversal-grey"
+    #gsettings set org.gnome.desktop.interface widget-theme "MacTahoe-Light"
+
 fi
 
 # ------------------------------------ GHOSTTY
@@ -79,6 +82,11 @@ ln -sf ~/.config/rofi/style/style$SWITCHTO.rasi ~/.config/rofi/style.rasi
 # ------------------------------------ KITTY
 ln -sf ~/.config/kitty/style/$KITTYTHEME.conf ~/.config/kitty/style.conf
 
+# ------------------------------------ SWAYNC
+ln -sf ~/.config/swaync/style/style$SWITCHTO.css ~/.config/swaync/style.css
+# ------------------------------------ SWAYNC RELOAD
+pkill -SIGUSR2 swaync
+
 # ------------------------------------ XFCE
 # xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita$SWITCHTO"
 # xfconf-query -c xsettings -p /Net/IconThemeName -s "Adwaita$SWITCHTO"
@@ -87,4 +95,4 @@ ln -sf ~/.config/kitty/style/$KITTYTHEME.conf ~/.config/kitty/style.conf
 ln -sf ~/.config/hypr/hyprlock/hyprlock$SWITCHTO.conf ~/.config/hypr/hyprlock.conf
 
 # ------------------------------------ RESTART WAYBAR
-#killall -SIGUSR2 waybar
+killall -SIGUSR2 waybar
