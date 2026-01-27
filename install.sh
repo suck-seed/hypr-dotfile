@@ -67,7 +67,7 @@ sudo pacman -S --needed pipewire pipewire-pulse wireplumber pavucontrol
 
 # UTILITIES
 echo "[*] Installing essential utilities..."
-sudo pacman -S --needed swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland networkmanager network-manager-applet playerctl pamixer brightnessctl udiskie wdisplays wlogout libnotify ntfs-3g os-prober python  gnome-keyring polkit-gnome libvirt qemu pipewire-jack
+sudo pacman -S --needed swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland networkmanager network-manager-applet playerctl pamixer brightnessctl udiskie wdisplays wlogout libnotify ntfs-3g os-prober python  gnome-keyring polkit-gnome libvirt qemu pipewire-jack socat
 
 echo "[*] Setting hyprland portal as default..."
 sudo tee /usr/share/xdg-desktop-portal/portals.conf >/dev/null <<EOF

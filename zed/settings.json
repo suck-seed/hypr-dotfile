@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "extend_comment_on_newline": false,
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
@@ -88,7 +89,7 @@
   // THEME
   "theme": {
     "mode": "system",
-    "light": "Fleet Light",
+    "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha"
   },
 
