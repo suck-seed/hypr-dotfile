@@ -95,4 +95,4 @@ pkill -SIGUSR2 swaync
 ln -sf ~/.config/hypr/hyprlock/hyprlock$SWITCHTO.conf ~/.config/hypr/hyprlock.conf
 
 # ------------------------------------ RESTART WAYBAR
-killall -SIGUSR2 waybar
+# killall -SIGUSR2 waybar
