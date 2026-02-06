@@ -21,31 +21,30 @@ BG_PATH="$HOME/.config/hypr/wallpapers/wallpaper.jpg"
 ln -sf ~/.config/hypr/wallpapers/themes/images$SWITCHTO/link "$BG_PATH"
 
 # Show new wallpaper immediately
-swww img "$BG_PATH" --transition-type any --transition-duration 1 &
+swww img "$BG_PATH" --transition-type any --transition-duration 1.5 &
 
 # Generate rofi / wlogout versions in the background
 (
-  magick "$BG_PATH" -resize 2300x1294\> -quality 100 ~/.config/rofi/wallpaper.jpg
+  magick "$BG_PATH" -resize 1920x1200\> -quality 85 ~/.config/rofi/wallpaper.jpg
   cp ~/.config/rofi/wallpaper.jpg ~/.config/wlogout/wallpaper.jpg
   magick ~/.config/wlogout/wallpaper.jpg -blur 0x8 ~/.config/wlogout/wallpaper.jpg
-  # ln -sf /usr/share/sddm/themes/sdt/Backgrounds/wallpaper$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
 ) &
 
-
-
-
-# ------------------------------------ GTK
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 if [ "$SWITCHTO" = "-dark" ]; then
-
+	# GTK DARK
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
     gsettings set org.gnome.desktop.interface icon-theme "Reversal-grey-dark"
-    #gsettings set org.gnome.desktop.interface widget-theme "MacTahoe-Dark"
+
+    # SPICETIFY DARK
+    spicetify config current_theme catppuccin color_scheme mocha
 else
+	# GTK LIGHT
     gsettings set org.gnome.desktop.interface color-scheme "default"
     gsettings set org.gnome.desktop.interface icon-theme "Reversal-grey"
-    #gsettings set org.gnome.desktop.interface widget-theme "MacTahoe-Light"
 
+    # SPICETIFY DARK
+    spicetify config current_theme catppuccin color_scheme latte
 fi
 
 # ------------------------------------ GHOSTTY
@@ -93,6 +92,8 @@ pkill -SIGUSR2 swaync
 
 # ------------------------------------ HYPRLOCK
 ln -sf ~/.config/hypr/hyprlock/hyprlock$SWITCHTO.conf ~/.config/hypr/hyprlock.conf
+
+spicetify apply
 
 # ------------------------------------ RESTART WAYBAR
 # killall -SIGUSR2 waybar

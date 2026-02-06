@@ -1,6 +1,10 @@
 * {
-    font-weight: 500;
-    /*font-family: "SF Pro Regular", sans-serif;*/
-    font-family: "Inter Regular", sans-serif;
-    font-size: 16px;
+	font-weight: 500;
+	/*font-family: "SF Pro Regular", sans-serif;*/
+	font-family: "Inter Regular", sans-serif;
+	font-size: 16px;
+}
+
+menu {
+	background-color: rgba(40, 20, 100, 0.3);
 }
