@@ -14,7 +14,7 @@ window#waybar {
 
 tooltip {
 	background: #faf4ed;
-	border-radius: 18px;
+	border-radius: 20px;
 	border-width: 2px;
 	border-style: solid;
 	border-color: #11111b;
@@ -46,7 +46,7 @@ tooltip label {
 #workspaces button.urgent {
 	color: #11111b;
 	background: #a6e3a1;
-	border-radius: 18px;
+	border-radius: 20px;
 }
 
 #workspaces button:hover {
@@ -57,7 +57,6 @@ tooltip label {
 
 #custom-launch_wofi,
 #custom-bongocat,
-#custom-light_dark,
 #custom-power_profile,
 #custom-weather,
 #window,
@@ -72,7 +71,7 @@ tooltip label {
 #custom-flag,
 #backlight {
 	background: #faf4ed;
-	opacity: 0.9;
+	opacity: 0.8;
 	padding: 0px 10px;
 	margin: 3px 0px;
 	margin-top: 10px;
@@ -81,7 +80,7 @@ tooltip label {
 
 #clock {
 	color: #286983;
-	border-radius: 18px;
+	border-radius: 20px;
 }
 
 #custom-bongocat {
@@ -110,17 +109,17 @@ tooltip label {
 #temperature,
 #backlight,
 #custom-launch_wofi {
-	border-radius: 18px 0px 0px 18px;
+	border-radius: 20px 0px 0px 20px;
 }
 
 #custom-weather,
 #custom-cava,
 #custom-flag {
-	border-radius: 18px;
+	border-radius: 20px;
 	margin-right: 10px;
 }
 
-#custom-light_dark,
+#custom-bongocat,
 #workspaces,
 #pulseaudio.microphone,
 #battery {

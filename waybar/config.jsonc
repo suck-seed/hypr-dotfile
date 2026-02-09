@@ -24,18 +24,11 @@
         "pulseaudio#microphone",
         "temperature",
         "custom/bongocat",
-        "custom/light_dark"
     ],
 
     "custom/launch_wofi": {
         "format": "suck 󰹢",
         "on-click": "pkill rofi; ~/.config/rofi/launcher.sh",
-        "tooltip": false
-    },
-
-    "custom/light_dark": {
-        "format": "󱏿 ",
-        "on-click": "~/.config/waybar/scripts/baraction light",
         "tooltip": false
     },
 
@@ -178,7 +171,7 @@
         "on-click": "rfkill toggle bluetooth"
     },
     "custom/bongocat": {
-        "exec": "echo -e \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
+        "exec": "echo -e \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
         "format": "{}"
     },
     "custom/flag": {

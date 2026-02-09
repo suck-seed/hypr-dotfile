@@ -34,17 +34,17 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 if [ "$SWITCHTO" = "-dark" ]; then
 	# GTK DARK
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-    gsettings set org.gnome.desktop.interface icon-theme "Reversal-grey-dark"
+    gsettings set org.gnome.desktop.interface icon-theme "Reversal-dark"
 
     # SPICETIFY DARK
-    spicetify config current_theme catppuccin color_scheme mocha
+    #spicetify config current_theme catppuccin color_scheme mocha
 else
 	# GTK LIGHT
     gsettings set org.gnome.desktop.interface color-scheme "default"
-    gsettings set org.gnome.desktop.interface icon-theme "Reversal-grey"
+    gsettings set org.gnome.desktop.interface icon-theme "Reversal"
 
     # SPICETIFY DARK
-    spicetify config current_theme catppuccin color_scheme latte
+    #spicetify config current_theme catppuccin color_scheme latte
 fi
 
 # ------------------------------------ GHOSTTY
