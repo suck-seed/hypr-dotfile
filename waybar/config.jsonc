@@ -9,11 +9,10 @@
     "modules-left": [
         "custom/launch_wofi",
         "hyprland/workspaces",
-        "custom/cava",
-        "custom/flag",
-        "custom/weather"
+        "clock",
+        "custom/weather",
     ],
-    "modules-center": ["clock"],
+    // "modules-center": ["clock"],
     "modules-right": [
         "network",
         "bluetooth",
@@ -27,15 +26,9 @@
     ],
 
     "custom/launch_wofi": {
-        "format": "suck 󰹢",
+        "format": "󰐝",
         "on-click": "pkill rofi; ~/.config/rofi/launcher.sh",
         "tooltip": false
-    },
-
-    "custom/cava": {
-        "exec": "~/.config/waybar/scripts/cava.sh",
-        "format": "{}",
-        "on-click": "ghostty -e cava"
     },
 
     "custom/updates": {
@@ -70,7 +63,8 @@
     },
 
     "clock": {
-        "format": "󰥔 {:%I:%M %p   %A, %b %d}",
+        // "format": "󰥔 {:%I:%M %p, %b %d}",
+        "format": "󰥔 {:%I:%M %p}",
         "tooltip-format": "<span size='15000'><tt>{calendar}</tt></span>",
         "calendar": {
             "mode": "month",
@@ -174,11 +168,4 @@
         "exec": "echo -e \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
         "format": "{}"
     },
-    "custom/flag": {
-        "tooltip": true,
-        "exec": "~/.venvs/waybar-weather/bin/python ~/.config/waybar/scripts/flag.py",
-        "interval": 60,
-        "return-type": "json",
-        "format": "{}"
-    }
 }

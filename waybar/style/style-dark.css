@@ -1,3 +1,5 @@
+@import "mocha.css";
+
 * {
 	border: none;
 	border-radius: 0;
@@ -17,7 +19,7 @@ tooltip * {
 }
 
 tooltip {
-	background: #1e1e2e;
+	background: #181821;
 	border-radius: 20px;
 	border-width: 2px;
 	border-style: solid;
@@ -38,22 +40,22 @@ tooltip label {
 }
 
 #workspaces button.active {
-	color: #cdd6f4;
+	color: @text;
 }
 
 #workspaces button.focused {
 	color: #cdd6f4;
-	background: #eba0ac;
+	background: @maroon;
 }
 
 #workspaces button.urgent {
 	color: #11111b;
-	background: #a6e3a1;
+	background: @green;
 	border-radius: 20px;
 }
 
 #workspaces button:hover {
-	background: #eb6f92;
+	background: @maroon;
 	color: #232136;
 	border-radius: 20px;
 }
@@ -72,7 +74,7 @@ tooltip label {
 #bluetooth,
 #custom-flag,
 #backlight {
-	background: #1e1e2e;
+	background: #181821;
 	opacity: 0.8;
 	padding: 0px 10px;
 	margin: 3px 0px;
@@ -90,6 +92,7 @@ tooltip label {
 
 #custom-flag,
 #custom-weather {
+	color: @text;
 	background: #393552;
 }
 
@@ -101,7 +104,7 @@ tooltip label {
 }
 
 #clock {
-	color: #f6c177;
+	color: @yellow;
 }
 
 #custom-cava,
@@ -110,7 +113,7 @@ tooltip label {
 }
 
 #custom-cava {
-	color: #eb6f92;
+	color: @maroon;
 }
 
 #clock,
@@ -129,20 +132,24 @@ tooltip label {
 	margin-right: 10px;
 }
 
+#temperature {
+	color: @text;
+}
+
 #temperature.critical {
-	color: #e92d4d;
+	color: @red;
 }
 
 #network.ethernet {
-	color: blue;
+	color: @blue;
 }
 
 #network.disabled {
-	color: red;
+	color: @red;
 }
 
 #network.wifi {
-	color: #afd69b;
+	color: @green;
 }
 
 #workspaces {
@@ -152,15 +159,15 @@ tooltip label {
 
 #bluetooth.on,
 #bluetooth.connected {
-	color: #3e8fb0;
+	color: @blue;
 }
 
 #bluetooth.discovering {
-	color: yellow;
+	color: @yellow;
 }
 
 #custom-power_profile {
-	color: #1d7715;
+	color: @green;
 	border-left: 0px;
 	border-right: 0px;
 }
@@ -170,32 +177,36 @@ tooltip label {
 }
 
 #custom-launch_wofi {
-	color: #407cdd;
+	color: @blue;
 	margin-left: 10px;
 	border-right: 0px;
 }
 
 #pulseaudio {
-	color: #407cdd;
+	color: @blue;
 	border-left: 0px;
 	border-right: 0px;
 }
 
 #pulseaudio.microphone {
-	color: #ad6bfd;
+	color: @mauve;
 	border-left: 0px;
 	border-right: 0px;
 }
 
 #battery {
-	color: #8fb6ab;
+	color: @green;
 	border-left: 0px;
 }
 
 #battery.critical {
-	color: red;
+	color: @red;
 }
 
 #battery.warning {
-	color: #ea9d34;
+	color: @orange;
+}
+
+#backlight {
+	color: @text;
 }
