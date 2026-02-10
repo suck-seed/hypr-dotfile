@@ -100,7 +100,10 @@ tooltip label {
 }
 
 #custom-cava {
-	color: @sky;
+	/*color: @blue;*/
+	color: transparent;
+	background: transparent;
+	opacity: 0;
 }
 
 #custom-cava,

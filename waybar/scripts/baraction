@@ -25,7 +25,7 @@ swww img "$BG_PATH" --transition-type any --transition-duration 1.5 &
 
 # Generate rofi / wlogout versions in the background
 (
-  magick "$BG_PATH" -resize 1920x1200\> -quality 85 ~/.config/rofi/wallpaper.jpg
+  magick "$BG_PATH" -resize 1920x1200\> -quality 100 ~/.config/rofi/wallpaper.jpg
   cp ~/.config/rofi/wallpaper.jpg ~/.config/wlogout/wallpaper.jpg
   magick ~/.config/wlogout/wallpaper.jpg -blur 0x8 ~/.config/wlogout/wallpaper.jpg
 ) &

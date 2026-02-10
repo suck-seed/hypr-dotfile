@@ -9,10 +9,11 @@
     "modules-left": [
         "custom/launch_wofi",
         "hyprland/workspaces",
-        "clock",
+       	"clock",
         "custom/weather",
+        "custom/cava",
     ],
-    // "modules-center": ["clock"],
+    // "modules-center" : ["clock"],
     "modules-right": [
         "network",
         "bluetooth",
@@ -26,7 +27,7 @@
     ],
 
     "custom/launch_wofi": {
-        "format": "󰐝",
+        "format": "suck ",
         "on-click": "pkill rofi; ~/.config/rofi/launcher.sh",
         "tooltip": false
     },
@@ -43,6 +44,7 @@
         "on-scroll-down": "hyprctl dispatch workspace r-1",
         "on-click": "activate",
         "active-only": true,
+        // "persistent-workspaces": { "*": 3 },
         "all-outputs": true,
         "format": "{}",
         "tooltip": false,
@@ -52,6 +54,12 @@
             "default": ""
         }
     },
+
+    "custom/cava": {
+            "exec": "~/.config/waybar/scripts/cava.sh",
+            "format": "{}",
+            "on-click": "kitty cava"
+        },
 
     "custom/weather": {
         //shows the current weather and forecast
@@ -102,8 +110,8 @@
     },
 
     "pulseaudio": {
-        "format": " {icon} ",
-        "format-muted": "  ",
+        "format": "{icon} ",
+        "format-muted": " ",
         "on-click": "pamixer -t",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer -i 5",
