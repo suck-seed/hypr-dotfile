@@ -113,10 +113,10 @@ tooltip label {
 }
 
 #custom-cava {
-	/*color: @maroon;*/
-	color: transparent;
-	background: transparent;
-	opacity: 0;
+	color: @maroon;
+	/*color: transparent;*/
+	/*background: transparent;*/
+	/*opacity: 0;*/
 }
 
 #clock,

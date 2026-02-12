@@ -7,7 +7,24 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-	"collaboration_panel": {
+	"lsp": {
+  "vtsls": {
+   "settings": {
+    "typescript": {
+     "updateImportsOnFileMove": {
+      "enabled": "always"
+     }
+    },
+    "javascript": {
+     "updateImportsOnFileMove": {
+      "enabled": "always"
+     }
+    }
+   },
+   "enable_lsp_tasks": true
+  }
+ },
+ "collaboration_panel": {
   "button": true
  },
  "notification_panel": {
@@ -113,7 +130,7 @@
 	// THEME
 	"theme": {
 		"mode": "system",
-		"light": "Catppuccin Latte",
+		"light": "Fleet Light",
 		"dark": "Catppuccin Mocha",
 	},
 

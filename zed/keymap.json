@@ -129,4 +129,10 @@
 			"alt-e": "diagnostics::Deploy",
 		},
 	},
+ {
+  "context": "Editor",
+  "bindings": {
+   "ctrl-shift-i": "editor::Format"
+  }
+ }
 ]

@@ -25,26 +25,19 @@ swww img "$BG_PATH" --transition-type any --transition-duration 1.5 &
 
 # Generate rofi / wlogout versions in the background
 (
-  magick "$BG_PATH" -resize 1920x1200\> -quality 100 ~/.config/rofi/wallpaper.jpg
+  magick "$BG_PATH" -resize 1920x1200\> -quality 90 ~/.config/rofi/wallpaper.jpg
   cp ~/.config/rofi/wallpaper.jpg ~/.config/wlogout/wallpaper.jpg
   magick ~/.config/wlogout/wallpaper.jpg -blur 0x8 ~/.config/wlogout/wallpaper.jpg
 ) &
 
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+gsettings set org.gnome.desktop.interface gtk-theme 'Granite'
 if [ "$SWITCHTO" = "-dark" ]; then
-	# GTK DARK
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
     gsettings set org.gnome.desktop.interface icon-theme "Reversal-dark"
 
-    # SPICETIFY DARK
-    #spicetify config current_theme catppuccin color_scheme mocha
 else
-	# GTK LIGHT
     gsettings set org.gnome.desktop.interface color-scheme "default"
     gsettings set org.gnome.desktop.interface icon-theme "Reversal"
-
-    # SPICETIFY DARK
-    #spicetify config current_theme catppuccin color_scheme latte
 fi
 
 # ------------------------------------ GHOSTTY
@@ -86,14 +79,11 @@ ln -sf ~/.config/swaync/style/style$SWITCHTO.css ~/.config/swaync/style.css
 # ------------------------------------ SWAYNC RELOAD
 pkill -SIGUSR2 swaync
 
-# ------------------------------------ XFCE
-# xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita$SWITCHTO"
-# xfconf-query -c xsettings -p /Net/IconThemeName -s "Adwaita$SWITCHTO"
 
 # ------------------------------------ HYPRLOCK
 ln -sf ~/.config/hypr/hyprlock/hyprlock$SWITCHTO.conf ~/.config/hypr/hyprlock.conf
 
-spicetify apply
+# spicetify apply
 
 # ------------------------------------ RESTART WAYBAR
 # killall -SIGUSR2 waybar
