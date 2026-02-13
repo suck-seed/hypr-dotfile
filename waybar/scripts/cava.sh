@@ -1,7 +1,4 @@
 #!/bin/bash
-
-#Taken from JaKoolit's dotfiles
-
 bar="▁▂▃▄▅▆▇█"
 dict="s/;//g"
 
@@ -16,7 +13,7 @@ cat >"$config_file" <<EOF
 bars = 10
 
 [input]
-method = pulse
+method = pipewire
 source = auto
 
 [output]
@@ -27,5 +24,4 @@ ascii_max_range = 7
 EOF
 
 pkill -f "cava -p $config_file"
-
-cava -p "$config_file" | sed -u "$dict"
+cava -p "$config_file" 2>/dev/null | sed -u "$dict"

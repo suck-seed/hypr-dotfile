@@ -99,12 +99,12 @@ tooltip label{
 	font-weight: 600;
 }
 
-#custom-cava {
-	color: @blue;
+/*#custom-cava {*/
+	/*color: @blue;*/
 	/*color: transparent;*/
 	/*background: transparent;*/
 	/*opacity: 0;*/
-}
+/*}*/
 
 #custom-cava,
 #custom-flag {

@@ -10,11 +10,11 @@
         "custom/launch_wofi",
         "hyprland/workspaces",
        	"clock",
-        // "custom/cava",
-        "custom/weather",
+        "custom/cava"
     ],
     // "modules-center" : ["clock"],
     "modules-right": [
+    		"custom/weather",
         "network",
         "bluetooth",
         "custom/power_profile",
@@ -23,7 +23,7 @@
         "pulseaudio",
         "pulseaudio#microphone",
         "temperature",
-        "custom/bongocat",
+        "custom/bongocat"
     ],
 
     "custom/launch_wofi": {
@@ -39,12 +39,13 @@
         "interval": 300,
         "tooltip": true
     },
+
     "hyprland/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace r+1",
         "on-scroll-down": "hyprctl dispatch workspace r-1",
         "on-click": "activate",
         "active-only": true,
-        // "persistent-workspaces": { "*": 3 },
+        "persistent-workspaces": { "*": 3 },
         "all-outputs": true,
         "format": "{}",
         "tooltip": false,
@@ -56,10 +57,11 @@
     },
 
     "custom/cava": {
-            "exec": "~/.config/waybar/scripts/cava.sh",
-            "format": "{}",
-            "on-click": "ghostty -e cava"
-        },
+        "exec": "~/.config/waybar/scripts/cava.sh",
+        "format": "{}",
+        "on-click": "ghostty -e cava",
+        "tooltip": false,
+    },
 
     "custom/weather": {
         //shows the current weather and forecast

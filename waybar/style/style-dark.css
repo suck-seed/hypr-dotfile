@@ -112,12 +112,12 @@ tooltip label {
 	padding: 0px 15px 0px 15px;
 }
 
-#custom-cava {
-	color: @maroon;
+/*#custom-cava {*/
+	/*color: @maroon;*/
 	/*color: transparent;*/
 	/*background: transparent;*/
 	/*opacity: 0;*/
-}
+/*}*/
 
 #clock,
 #custom-weather,
