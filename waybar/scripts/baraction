@@ -30,13 +30,23 @@ swww img "$BG_PATH" --transition-type any --transition-duration 1.5 &
   magick ~/.config/wlogout/wallpaper.jpg -blur 0x8 ~/.config/wlogout/wallpaper.jpg
 ) &
 
-gsettings set org.gnome.desktop.interface gtk-theme 'Granite'
 if [ "$SWITCHTO" = "-dark" ]; then
+	# copy config files gtk4
+    ln -sf ~/.themes/Catppuccin-BL-LB-Dark/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0
+    ln -sf ~/.themes/Catppuccin-BL-LB-Dark/gtk-4.0/gtk.css ~/.config/gtk-4.0
+    ln -sf ~/.themes/Catppuccin-BL-LB-Dark/gtk-4.0/assets/ ~/.config/gtk-4.0
+    gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-BL-LB-Dark'
+
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
     gsettings set org.gnome.desktop.interface icon-theme "Reversal-dark"
-
 else
-    gsettings set org.gnome.desktop.interface color-scheme "default"
+ # copy config files gtk4
+    ln -sf ~/.themes/Catppuccin-BL-LB-Light/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0
+    ln -sf ~/.themes/Catppuccin-BL-LB-Light/gtk-4.0/gtk.css ~/.config/gtk-4.0
+    ln -sf ~/.themes/Catppuccin-BL-LB-Light/gtk-4.0/assets/ ~/.config/gtk-4.0
+    gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-BL-LB-Light'
+
+    gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
     gsettings set org.gnome.desktop.interface icon-theme "Reversal"
 fi
 
@@ -78,7 +88,7 @@ ln -sf ~/.config/kitty/style/$KITTYTHEME.conf ~/.config/kitty/style.conf
 ln -sf ~/.config/swaync/style/style$SWITCHTO.css ~/.config/swaync/style.css
 # ------------------------------------ SWAYNC RELOAD
 pkill -SIGUSR2 swaync
-
+pkill -SIGUSR2 nautilus
 
 # ------------------------------------ HYPRLOCK
 ln -sf ~/.config/hypr/hyprlock/hyprlock$SWITCHTO.conf ~/.config/hypr/hyprlock.conf

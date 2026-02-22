@@ -8,44 +8,44 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
 	"lsp": {
-  "vtsls": {
-   "settings": {
-    "typescript": {
-     "updateImportsOnFileMove": {
-      "enabled": "always"
-     }
-    },
-    "javascript": {
-     "updateImportsOnFileMove": {
-      "enabled": "always"
-     }
-    }
-   },
-   "enable_lsp_tasks": true
-  }
- },
- "collaboration_panel": {
-  "button": true
- },
- "notification_panel": {
-  "button": false
- },
- "git_panel": {
-  "button": false
- },
- "debugger": {
-  "button": false
- },
- "search": {
-  "button": false
- },
- "diagnostics": {
-  "button": false
- },
- "file_finder": {
-  "git_status": true
- },
- "edit_predictions": {
+		"vtsls": {
+			"settings": {
+				"typescript": {
+					"updateImportsOnFileMove": {
+						"enabled": "always",
+					},
+				},
+				"javascript": {
+					"updateImportsOnFileMove": {
+						"enabled": "always",
+					},
+				},
+			},
+			"enable_lsp_tasks": true,
+		},
+	},
+	"collaboration_panel": {
+		"button": true,
+	},
+	"notification_panel": {
+		"button": false,
+	},
+	"git_panel": {
+		"button": false,
+	},
+	"debugger": {
+		"button": false,
+	},
+	"search": {
+		"button": false,
+	},
+	"diagnostics": {
+		"button": true,
+	},
+	"file_finder": {
+		"git_status": true,
+	},
+	"edit_predictions": {
 		"provider": "none",
 	},
 	"agent_ui_font_size": 16.0,
@@ -66,8 +66,8 @@
 	"bottom_dock_layout": "contained",
 	"tab_bar": {
 		"show_pinned_tabs_in_separate_row": false,
-  "show_tab_bar_buttons": false,
-  "show_nav_history_buttons": false,
+		"show_tab_bar_buttons": false,
+		"show_nav_history_buttons": false,
 		"show": true,
 	},
 	"title_bar": {
@@ -94,14 +94,14 @@
 		"show": "never",
 	},
 	"gutter": {
-		"folds": false,
-		"breakpoints": true,
-		"runnables": true,
+		"folds": true,
+		"breakpoints": false,
+		"runnables": false,
 	},
 	"rounded_selection": true,
 	"agent": {
 		"button": true,
-  "dock": "left",
+		"dock": "left",
 		"default_profile": "ask",
 		"default_model": {
 			"provider": "zed.dev",
@@ -130,7 +130,7 @@
 	// THEME
 	"theme": {
 		"mode": "system",
-		"light": "Fleet Light",
+		"light": "Latte",
 		"dark": "Catppuccin Mocha",
 	},
 
@@ -151,8 +151,8 @@
 	// OUTLINE
 	"outline_panel": {
 		"git_status": true,
-  "button": false,
-  "dock": "left",
+		"button": false,
+		"dock": "left",
 	},
 
 	// SAVES AND RESTORES

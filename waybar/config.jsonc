@@ -10,11 +10,11 @@
         "custom/launch_wofi",
         "hyprland/workspaces",
        	"clock",
+    		"custom/weather",
         "custom/cava"
     ],
     // "modules-center" : ["clock"],
     "modules-right": [
-    		"custom/weather",
         "network",
         "bluetooth",
         "custom/power_profile",
@@ -27,7 +27,7 @@
     ],
 
     "custom/launch_wofi": {
-        "format": "suck ",
+        "format": "",
         "on-click": "pkill rofi; ~/.config/rofi/launcher.sh",
         "tooltip": true
     },

@@ -3,10 +3,30 @@
 * {
 	border: none;
 	border-radius: 0;
-	font-family: "SF Mono";
+	font-family: "Commit Mono";
+	/*font-family: "SF Pro Regular";*/
+	/*font-family: "SF Mono";*/
 	font-weight: bold;
 	font-size: 16px;
 	min-height: 0;
+}
+
+#custom-launch_wofi,
+#custom-bongocat,
+#custom-power_profile,
+#custom-weather,
+#window,
+#custom-cava,
+#clock,
+#battery,
+#pulseaudio,
+#temperature,
+#workspaces,
+#network,
+#bluetooth,
+#custom-flag,
+#backlight {
+	opacity: 0.9;
 }
 
 window#waybar {
@@ -75,7 +95,6 @@ tooltip label {
 #custom-flag,
 #backlight {
 	background: #181821;
-	opacity: 0.8;
 	padding: 0px 10px;
 	margin: 3px 0px;
 	margin-top: 10px;
@@ -112,12 +131,12 @@ tooltip label {
 	padding: 0px 15px 0px 15px;
 }
 
-/*#custom-cava {*/
+#custom-cava {
 	/*color: @maroon;*/
-	/*color: transparent;*/
-	/*background: transparent;*/
-	/*opacity: 0;*/
-/*}*/
+	color: transparent;
+	background: transparent;
+	opacity: 0;
+}
 
 #clock,
 #custom-weather,
