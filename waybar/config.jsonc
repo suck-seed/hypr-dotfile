@@ -9,11 +9,11 @@
     "modules-left": [
         "custom/launch_wofi",
         "hyprland/workspaces",
-       	"clock",
+       	// "clock",
     		"custom/weather",
         "custom/cava"
     ],
-    // "modules-center" : ["clock"],
+    "modules-center" : ["clock"],
     "modules-right": [
         "network",
         "bluetooth",
@@ -27,7 +27,7 @@
     ],
 
     "custom/launch_wofi": {
-        "format": "",
+        "format": "suck ",
         "on-click": "pkill rofi; ~/.config/rofi/launcher.sh",
         "tooltip": true
     },
@@ -45,7 +45,7 @@
         "on-scroll-down": "hyprctl dispatch workspace r-1",
         "on-click": "activate",
         "active-only": true,
-        "persistent-workspaces": { "*": 3 },
+        // "persistent-workspaces": { "*": 3 },
         "all-outputs": true,
         "format": "{}",
         "tooltip": false,
@@ -74,7 +74,7 @@
 
     "clock": {
         // "format": "󰥔 {:%I:%M %p, %b %d}",
-        "format": " {:%I:%M %p, %b %d} ",
+        "format": "{:%I:%M %p,  %b %d}",
         "tooltip-format": "<span size='15000'><tt>{calendar}</tt></span>",
         "calendar": {
             "mode": "month",

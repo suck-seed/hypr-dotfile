@@ -1,0 +1,26 @@
+# Fleet Light - Ghostty Theme
+
+palette = 0=#aeaeae
+palette = 1=#C72C49
+palette = 2=#4DBB5F
+palette = 3=#B0993C
+palette = 4=#1D61BA
+palette = 5=#CC37FA
+palette = 6=#0A8282
+palette = 7=#000000
+palette = 8=#c2c2c2
+palette = 9=#CE0505
+palette = 10=#33F253
+palette = 11=#FFD83B
+palette = 12=#0073FF
+palette = 13=#CC26FF
+palette = 14=#24E0FF
+palette = 15=#606060
+
+background = #FFFFFF
+foreground = #090909
+cursor-color = #090909
+cursor-text = #FFFFFF
+selection-background = #A8C6F4
+selection-foreground = #090909
+split-divider-color = #EEEFF0

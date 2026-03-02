@@ -1,11 +1,11 @@
-@import "mocha.css";
+@import "dark.css";
 
 * {
 	border: none;
 	border-radius: 0;
-	font-family: "Commit Mono";
+	/*font-family: "Commit Mono";*/
 	/*font-family: "SF Pro Regular";*/
-	/*font-family: "SF Mono";*/
+	font-family: "SF Mono";
 	font-weight: bold;
 	font-size: 16px;
 	min-height: 0;
@@ -39,8 +39,8 @@ tooltip * {
 }
 
 tooltip {
-	background: #181821;
-	border-radius: 20px;
+	background: @mantle;
+	border-radius: 8px;
 	border-width: 2px;
 	border-style: solid;
 	border-color: #c8b6ff;
@@ -49,13 +49,13 @@ tooltip {
 
 tooltip label {
 	color: #cdd6f4;
-	border-radius: 20px;
+	border-radius: 8px;
 	background: transparent;
 }
 
 #workspaces button {
 	padding: 5px;
-	color: #313244;
+	color: @base;
 	margin-right: 5px;
 }
 
@@ -70,14 +70,14 @@ tooltip label {
 
 #workspaces button.urgent {
 	color: #11111b;
-	background: @green;
-	border-radius: 20px;
+	background: @maroon;
+	border-radius: 8px;
 }
 
 #workspaces button:hover {
-	background: @maroon;
-	color: #232136;
-	border-radius: 20px;
+	background: @teal;
+	color: @text;
+	border-radius: 8px;
 }
 
 #custom-launch_wofi,
@@ -94,12 +94,12 @@ tooltip label {
 #bluetooth,
 #custom-flag,
 #backlight {
-	background: #181821;
+	background: @crust;
 	padding: 0px 10px;
 	margin: 3px 0px;
 	margin-top: 10px;
 	border: 0;
-	border-color: #907aa9;
+	border-color: @base;
 	border-style: solid;
 }
 
@@ -111,19 +111,24 @@ tooltip label {
 
 #custom-flag,
 #custom-weather {
-	color: @text;
-	background: #393552;
+	color: @blue;
+	background: @crust;
+	font-weight: 600;
+
+	/*color: transparent;
+	background: transparent;
+	opacity: 0;*/
 }
 
 #network,
 #temperature,
 #backlight,
 #custom-launch_wofi {
-	border-radius: 20px 0px 0px 20px;
+	border-radius: 8px 0px 0px 8px;
 }
 
 #clock {
-	color: @yellow;
+	color: @text;
 }
 
 #custom-cava,
@@ -132,17 +137,17 @@ tooltip label {
 }
 
 #custom-cava {
-	/*color: @maroon;*/
-	color: transparent;
+	color: @blue;
+	/*color: transparent;
 	background: transparent;
-	opacity: 0;
+	opacity: 0;*/
 }
 
 #clock,
 #custom-weather,
 #custom-cava,
 #custom-flag {
-	border-radius: 20px;
+	border-radius: 8px;
 	margin-right: 10px;
 }
 
@@ -150,7 +155,7 @@ tooltip label {
 #workspaces,
 #pulseaudio.microphone,
 #battery {
-	border-radius: 0px 20px 20px 0px;
+	border-radius: 0px 8px 8px 0px;
 	margin-right: 10px;
 }
 
@@ -159,15 +164,15 @@ tooltip label {
 }
 
 #temperature.critical {
-	color: @red;
+	color: @maroon;
 }
 
 #network.ethernet {
-	color: @blue;
+	color: @text;
 }
 
 #network.disabled {
-	color: @red;
+	color: @text;
 }
 
 #network.wifi {
@@ -181,25 +186,25 @@ tooltip label {
 
 #bluetooth.on,
 #bluetooth.connected {
-	color: @blue;
+	color: @text;
 }
 
 #bluetooth.discovering {
-	color: @yellow;
+	color: @text;
 }
 
 #custom-power_profile {
-	color: @green;
+	color: @text;
 	border-left: 0px;
 	border-right: 0px;
 }
 
 #window {
-	margin-right: 20px;
+	margin-right: 8px;
 }
 
 #custom-launch_wofi {
-	color: @blue;
+	color: @teal;
 	margin-left: 10px;
 	border-right: 0px;
 }
@@ -211,7 +216,7 @@ tooltip label {
 }
 
 #pulseaudio.microphone {
-	color: @mauve;
+	color: @lavender;
 	border-left: 0px;
 	border-right: 0px;
 }
@@ -222,13 +227,13 @@ tooltip label {
 }
 
 #battery.critical {
-	color: @red;
+	color: @maroon;
 }
 
 #battery.warning {
-	color: @orange;
+	color: @red;
 }
 
 #backlight {
-	color: @text;
+	color: @yellow;
 }

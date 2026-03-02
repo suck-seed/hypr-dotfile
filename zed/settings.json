@@ -130,8 +130,8 @@
 	// THEME
 	"theme": {
 		"mode": "system",
-		"light": "Latte",
-		"dark": "Catppuccin Mocha",
+		"light": "Fleet Light",
+		"dark": "Fleet Dark",
 	},
 
 	// PROJETC PANEL IN RIGHT
@@ -164,7 +164,7 @@
 	"ui_font_weight": 500.0,
 	"ui_font_family": "SF Pro Text",
 	"ui_font_size": 16.0,
-	"buffer_font_size": 16.0,
+	"buffer_font_size": 17.0,
 	"buffer_font_weight": 500,
 	"buffer_font_family": "CommitMono",
 	"buffer_font_fallbacks": ["Segoe UI"],

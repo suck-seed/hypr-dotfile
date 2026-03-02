@@ -27,7 +27,7 @@ window {
     enabled:                     true;
     border:			 none;
     border-color:		 @secondary-container;
-    border-radius:               15px;
+    border-radius:               8px;
     cursor:                      "default";
     background-color:            @on-primary-fixed;
 }
@@ -70,7 +70,7 @@ inputbar {
     enabled:                     true;
     spacing:                     10px;
     padding:                     15px;
-    border-radius:               10px;
+    border-radius:               8px;
     background-color:		     @on-primary;
     text-color:			         @search;
     children:                    [ "textbox-prompt-colon", "entry" ];
@@ -99,7 +99,7 @@ mode-switcher{
 }
 button {
     padding:                     15px;
-    border-radius:               10px;
+    border-radius:               8px;
     background-color:            @on-primary;
     text-color:                  inherit;
     cursor:                      pointer;
@@ -131,7 +131,7 @@ element {
     enabled:                     true;
     spacing:                     15px;
     padding:                     8px;
-    border-radius:               10px;
+    border-radius:               8px;
     background-color:            transparent;
     text-color:                  @on-surface;
     cursor:                      pointer;
@@ -179,7 +179,7 @@ message {
 }
 textbox {
     padding:                     15px;
-    border-radius:               10px;
+    border-radius:               8px;
     background-color:            @on-primary;
     text-color:                  @on-surface;
     vertical-align:              0.5;
@@ -187,7 +187,7 @@ textbox {
 }
 error-message {
     padding:                     15px;
-    border-radius:               20px;
+    border-radius:               8px;
     background-color:            @on-primary;
     text-color:                  @on-surface;
 }

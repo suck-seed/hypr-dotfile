@@ -1,5 +1,5 @@
 font-family = "CommitMono"
-font-size = 12
+font-size = 13
 font-thicken = true
 font-feature = -liga
 #adjust-cell-height = 4
@@ -15,3 +15,6 @@ mouse-hide-while-typing = true
 # Hide scrollbar and use nice padding
 window-padding-x = 10
 window-padding-y = 10
+
+#theme = dark:Catppuccin Mocha,light:Catppuccin Latte
+theme = dark:Fleet Dark,light:Fleet Light
