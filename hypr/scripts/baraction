@@ -7,10 +7,10 @@ CURRENT_BASENAME=$(basename "$CURRENT_STYLE")
 # ------------------------------------ VARIABLES
 if [[ "$CURRENT_BASENAME" == *"-dark.css"  ]]; then
     SWITCHTO=""
-    THEMENAME="rose-pine-dawn"
+    THEMENAME="fleet-dark"
 else
     SWITCHTO="-dark"
-    THEMENAME="rose-pine"
+    THEMENAME="fleet-light"
 fi
 
 # ------------------------------------ WAYBAR
