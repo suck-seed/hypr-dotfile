@@ -1,37 +1,12 @@
 @import "dark.css";
+@import "opacitySet.css";
 
-* {
-	border: none;
-	border-radius: 0;
-	/*font-family: "Commit Mono";*/
-	/*font-family: "SF Pro Regular";*/
-	font-family: "SF Mono";
-	font-weight: bold;
-	font-size: 16px;
-	min-height: 0;
-}
-
-#custom-launch_wofi,
-#custom-bongocat,
-#custom-power_profile,
-#custom-weather,
-#window,
-#custom-cava,
-#clock,
-#battery,
-#pulseaudio,
-#temperature,
-#workspaces,
-#network,
-#bluetooth,
-#custom-flag,
-#backlight {
-	opacity: 0.9;
-}
 
 window#waybar {
-	background: rgba(21, 18, 27, 0);
-	color: #cdd6f4;
+	/*background: transparent;*/
+	/*background: rgba(17, 17, 17, 0.8);*/
+	background: @crustRgba;
+	color: @text;
 }
 
 tooltip * {
@@ -54,110 +29,46 @@ tooltip label {
 }
 
 #workspaces button {
-	padding: 5px;
-	color: @base;
-	margin-right: 5px;
+	color: @subtext1;
 }
 
 #workspaces button.active {
 	color: @text;
+	font-style: italic;
+	font-size: 16px;
 }
 
 #workspaces button.focused {
-	color: #cdd6f4;
-	background: @maroon;
+	color: @text;
+	background: @surface2;
+	font-style: italic;
 }
 
 #workspaces button.urgent {
-	color: #11111b;
-	background: @maroon;
-	border-radius: 8px;
+	color: @overlay;
+	background: @red;
+	border-radius: 10px;
 }
 
 #workspaces button:hover {
-	background: @teal;
-	color: @text;
-	border-radius: 8px;
-}
-
-#custom-launch_wofi,
-#custom-bongocat,
-#custom-power_profile,
-#custom-weather,
-#custom-cava,
-#clock,
-#battery,
-#pulseaudio,
-#temperature,
-#workspaces,
-#network,
-#bluetooth,
-#custom-flag,
-#backlight {
-	background: @crust;
-	padding: 0px 10px;
-	margin: 3px 0px;
-	margin-top: 10px;
-	border: 0;
-	border-color: @base;
-	border-style: solid;
-}
-
-#custom-bongocat {
-	margin: 3px 0px;
-	margin-top: 10px;
-	padding: 0;
-}
-
-#custom-flag,
-#custom-weather {
-	color: @blue;
-	background: @crust;
-	font-weight: 600;
-
-	/*color: transparent;
-	background: transparent;
-	opacity: 0;*/
-}
-
-#network,
-#temperature,
-#backlight,
-#custom-launch_wofi {
-	border-radius: 8px 0px 0px 8px;
+	background: @text;
+	color: @crust;
+	font-style: italic;
+	border-radius: 10px;
 }
 
 #clock {
 	color: @text;
 }
 
-#custom-cava,
-#custom-flag {
-	padding: 0px 15px 0px 15px;
-}
 
 #custom-cava {
-	color: @blue;
+	color: @text;
 	/*color: transparent;
 	background: transparent;
 	opacity: 0;*/
 }
 
-#clock,
-#custom-weather,
-#custom-cava,
-#custom-flag {
-	border-radius: 8px;
-	margin-right: 10px;
-}
-
-#custom-bongocat,
-#workspaces,
-#pulseaudio.microphone,
-#battery {
-	border-radius: 0px 8px 8px 0px;
-	margin-right: 10px;
-}
 
 #temperature {
 	color: @text;
@@ -176,13 +87,9 @@ tooltip label {
 }
 
 #network.wifi {
-	color: @green;
+	color: @text;
 }
 
-#workspaces {
-	padding-right: 0px;
-	padding-left: 5px;
-}
 
 #bluetooth.on,
 #bluetooth.connected {
@@ -193,37 +100,25 @@ tooltip label {
 	color: @text;
 }
 
-#custom-power_profile {
-	color: @text;
-	border-left: 0px;
-	border-right: 0px;
-}
 
-#window {
-	margin-right: 8px;
-}
 
 #custom-launch_wofi {
 	color: @teal;
-	margin-left: 10px;
-	border-right: 0px;
+
 }
 
 #pulseaudio {
-	color: @blue;
-	border-left: 0px;
-	border-right: 0px;
+	color: @text;
+
 }
 
 #pulseaudio.microphone {
-	color: @lavender;
-	border-left: 0px;
-	border-right: 0px;
+	color: @text;
+
 }
 
 #battery {
-	color: @green;
-	border-left: 0px;
+	color: @text;
 }
 
 #battery.critical {
@@ -235,5 +130,5 @@ tooltip label {
 }
 
 #backlight {
-	color: @yellow;
+	color: @text;
 }

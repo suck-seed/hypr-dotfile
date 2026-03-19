@@ -2,15 +2,14 @@
 @import "style.rasi"
 
 configuration {
-	modi: "drun,emoji,nerdy, :~/.config/rofi/wallpapers.sh";
+	modi: "drun";
 	display-drun: " ";
 	display-window: " ";
-	display-nerdy: "󰘧";
 	display-emoji: "😀";
 	drun-display-format: "{icon} {name}";
 	font: "JetBrainsMono Nerd Font 13";
 	show-icons: true;
-	icon-theme: "Colloid";
+    icon-theme: "Neuwaita";
 }
 
 window {
@@ -19,17 +18,17 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       1000px;
+    width:                       600px;
     x-offset:                    0px;
     y-offset:                    0px;
 
     /* properties for all widgets */
     enabled:                     true;
-    border:			 none;
-    border-color:		 @secondary-container;
-    border-radius:               8px;
+	border:			 				1px;
+    border-color:		 			@search;
+    border-radius:               16px;
     cursor:                      "default";
-    background-color:            @on-primary-fixed;
+    background-color:            @crust;
 }
 
 * {
@@ -40,37 +39,28 @@ mainbox {
     enabled:                     true;
     spacing:                     0px;
     border-radius:               0px 0px 0px 0px;
-    background-color:            transparent;
-    orientation:                 horizontal;
-    children:                    [ "imagebox", "listbox" ];
-}
-
-imagebox {
-    padding:                     20px;
-
-    background-color:            transparent;
-    background-image:            url("~/.config/rofi/wallpaper.jpg", height);
+    background-color:            @crust;
     orientation:                 vertical;
-    children:                    [ "inputbar", "dummy", "mode-switcher" ];
+    children:                    [ "inputbar", "listbox" ];
 }
 
 listbox {
     spacing:                     20px;
     padding:                     20px;
-    background-color:            transparent;
+    background-color:            @crust;
     orientation:                 vertical;
     children:                    ["message", "listview" ];
 }
 
 dummy {
-    background-color:            transparent;
+    background-color:            @crust;
 }
 
 inputbar {
     enabled:                     true;
     spacing:                     10px;
     padding:                     15px;
-    border-radius:               8px;
+    border-radius:               0px;
     background-color:		     @on-primary;
     text-color:			         @search;
     children:                    [ "textbox-prompt-colon", "entry" ];
@@ -91,24 +81,6 @@ entry {
     placeholder-color:           @search;
 }
 
-mode-switcher{
-    enabled:                     true;
-    spacing:                     20px;
-    background-color:            transparent;
-    text-color:                  @primary-fixed;
-}
-button {
-    padding:                     15px;
-    border-radius:               8px;
-    background-color:            @on-primary;
-    text-color:                  inherit;
-    cursor:                      pointer;
-}
-button selected {
-    background-color:            @primary;
-    text-color:                  @on-secondary;
-}
-
 listview {
     enabled:                     true;
     columns:                     1;
@@ -122,7 +94,7 @@ listview {
     fixed-columns:               true;
 
     spacing:                     10px;
-    background-color:            transparent;
+    background-color:            @crust;
     text-color:                  @on-surface;
     cursor:                      "default";
 }
@@ -132,7 +104,7 @@ element {
     spacing:                     15px;
     padding:                     8px;
     border-radius:               8px;
-    background-color:            transparent;
+    background-color:            @crust;
     text-color:                  @on-surface;
     cursor:                      pointer;
 }
@@ -163,7 +135,7 @@ element selected.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        32px;
+    size:                        42px;
     cursor:                      inherit;
 }
 element-text {
@@ -191,12 +163,6 @@ error-message {
     background-color:            @on-primary;
     text-color:                  @on-surface;
 }
-/* --- real transparent window --- */
-window {
-  transparency: "real";                 /* needs a compositor (Hyprland) */
-  background-color: rgba(17,17,17,0.10);/* the ONLY tint; change 0.50 as you like */
-  border: 0px;
-}
 
 /* --- make everything else transparent so it doesn't stack --- */
 * {
@@ -204,13 +170,8 @@ window {
   border: 0px;
 }
 
-mainbox, listview, listbox, inputbar, prompt, case-indicator,
+mainbox, listview, listbox, prompt, case-indicator,
 scrollbar, element, element-icon, element-text {
   background-color: transparent;
   border: 0px;
-}
-
-/* keep selection visible */
-element selected {
-  background-color: rgba(224,222,244,0.12);
 }

@@ -26,5 +26,7 @@
 @define-color surface0 #252629;
 
 /* LAYERS */
-@define-color base #18191B;  @define-color mantle #111214;
+@define-color base #18191B;
+@define-color mantle #111214;
 @define-color crust #111111;
+@define-color crustRgba rgba(17, 17, 17, 0.7);

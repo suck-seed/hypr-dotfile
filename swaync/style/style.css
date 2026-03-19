@@ -42,7 +42,7 @@ trough {
 		inset 0 0 0 1px rgba(24, 25, 27, 0.2);
 	border-radius: 12.6px;
 	margin: 18px;
-	background: #FFFFFF;
+	background:rgba(255, 255, 255, 0.8);
 	color: #090909;
 	padding: 0;
 }
@@ -140,10 +140,11 @@ trough {
 		0 0 8px 0 rgba(0, 0, 0, 0.1),
 		inset 0 0 0 1px rgba(24, 25, 27, 0.2);
 	border-radius: 14px;
-	background-color: #F8F8F9;
+	background-color: rgba(237, 238, 240, 0.8);
 	color: #090909;
 	padding: 10px;
 	margin: 10px;
+
 }
 
 .control-center .notification-background {
@@ -223,6 +224,7 @@ scrollbar trough {
 
 /* mpris */
 .widget-mpris-player {
+	margin-top: 12px;
 	background: #EEEFF0;
 	border-radius: 12.6px;
 	color: #090909;

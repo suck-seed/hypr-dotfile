@@ -37,9 +37,10 @@ if [ "$SWITCHTO" = "-dark" ]; then
     # ln -sf ~/.themes/Catppuccin-BL-LB-Dark/gtk-4.0/assets/ ~/.config/gtk-4.0
     # gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-BL-LB-Dark'
 
+    gsettings set org.gnome.desktop.interface icon-theme "Neuwaita"
 	gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-    gsettings set org.gnome.desktop.interface icon-theme "Reversal-dark"
+    # gsettings set org.gnome.desktop.interface icon-theme "Newaita-reborn-light-brown"
 else
  # copy config files gtk4
     # ln -sf ~/.themes/Catppuccin-BL-LB-Light/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0
@@ -47,9 +48,10 @@ else
     # ln -sf ~/.themes/Catppuccin-BL-LB-Light/gtk-4.0/assets/ ~/.config/gtk-4.0
     # gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-BL-LB-Light'
 
+    gsettings set org.gnome.desktop.interface icon-theme "Neuwaita"
 	gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3'
     gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
-    gsettings set org.gnome.desktop.interface icon-theme "Reversal"
+    # gsettings set org.gnome.desktop.interface icon-theme "Newaita-reborn-light-brown-dark"
 fi
 
 # ------------------------------------ ROFI

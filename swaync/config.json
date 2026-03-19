@@ -48,7 +48,7 @@
 			"app-name": "Spotify"
 		}
 	},
-	"widgets": ["inhibitors", "title", "dnd", "notifications"],
+	"widgets": ["inhibitors", "title", "dnd","mpris" ,"notifications"],
 	"widget-config": {
 		"inhibitors": {
 			"text": "Inhibitors",
@@ -68,8 +68,9 @@
 			"text": "Label Text"
 		},
 		"mpris": {
-			"blacklist": []
-		},
+      "image-size": 96,
+      "image-radius": 10
+    },
 		"buttons-grid": {
 			"actions": [
 				{

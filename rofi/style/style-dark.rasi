@@ -1,5 +1,5 @@
 * {
-    primary:                    #87C3FF;
+    primary:                    #14646E;
     primary-fixed:              #A8D4FF;
     primary-fixed-dim:          #87C3FF;
     on-primary:                 #18191B;
@@ -49,5 +49,6 @@
     surface-container:          #18191B;
     surface-container-high:     #252629;
     surface-container-highest:  #3E4147;
-    search:                     #323438;
+    search:                     #E0E1E4;
+    crust:  rgba(17, 17, 17, 0.8);
 }

@@ -5,38 +5,29 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 50,
+    "height": 35,
     "modules-left": [
         "custom/launch_wofi",
         "hyprland/workspaces",
-       	// "clock",
     		"custom/weather",
         "custom/cava"
     ],
-    "modules-center" : ["clock"],
+    // "modules-center" : ["clock"],
     "modules-right": [
-        "network",
-        "bluetooth",
-        "custom/power_profile",
-        "battery",
+    "temperature",
         "backlight",
         "pulseaudio",
         "pulseaudio#microphone",
-        "temperature",
+        "network",
+        "bluetooth",
+        "battery",
+        "clock",
         "custom/bongocat"
     ],
 
     "custom/launch_wofi": {
-        "format": "suck ",
+        "format": "",
         "on-click": "pkill rofi; ~/.config/rofi/launcher.sh",
-        "tooltip": true
-    },
-
-    "custom/updates": {
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/update-sys",
-        "on-click": "~/.config/waybar/scripts/update-sys update",
-        "interval": 300,
         "tooltip": true
     },
 
@@ -45,7 +36,7 @@
         "on-scroll-down": "hyprctl dispatch workspace r-1",
         "on-click": "activate",
         "active-only": true,
-        // "persistent-workspaces": { "*": 3 },
+        "persistent-workspaces": { "*": 3 },
         "all-outputs": true,
         "format": "{}",
         "tooltip": false,
@@ -74,7 +65,7 @@
 
     "clock": {
         // "format": "󰥔 {:%I:%M %p, %b %d}",
-        "format": "{:%I:%M %p,  %b %d}",
+        "format": "{:%a %b %d %I:%M}",
         "tooltip-format": "<span size='15000'><tt>{calendar}</tt></span>",
         "calendar": {
             "mode": "month",
@@ -91,9 +82,9 @@
 
     "backlight": {
         "device": "amdgpu_bl1",
-        "format": " {icon}",
+        "format": "{icon}",
         "tooltip": false,
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-"
     },
@@ -104,16 +95,16 @@
             "warning": 30,
             "critical": 20,
         },
-        "format": "{icon} ",
-        "format-charging": " {capacity}% ",
-        "format-plugged": " {capacity}% ",
-        "format-alt": "{icon} {capacity}% ",
+        "format": "{icon}",
+        "format-charging": "󰚥 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-alt": "{icon} {capacity}%",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
     "pulseaudio": {
-        "format": " {icon} ",
-        "format-muted": "  ",
+        "format": "{icon}",
+        "format-muted": "",
         "on-click": "pamixer -t",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer -i 5",
@@ -131,9 +122,9 @@
     },
 
     "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "format-source": " ",
-        "format-source-muted": "  ",
+        "format": " {format_source}",
+        "format-source": "",
+        "format-source-muted": "",
         "on-click": "bash ~/.config/hypr/scripts/mute_mic_script.sh",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer --default-source -i 5",
@@ -143,7 +134,7 @@
 
     "temperature": {
         "thermal-zone": 0,
-        "format": "  {temperatureC}°C",
+        "format": " {temperatureC}°C",
         "critical-threshold": 70,
         "format-critical": " {temperatureC}°C",
         "on-click": "ghostty -e btop"
@@ -151,10 +142,10 @@
 
     "network": {
         "on-click": "ghostty -e nmtui",
-        "format-icons": [" 󰤯", " 󰤟", " 󰤢", " 󰤥", " 󰤨"],
-        "format": "{icon}",
-        "format-wifi": "{icon}",
-        "format-ethernet": "󰀂 ",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format": " {icon}",
+        "format-wifi": " {icon}",
+        "format-ethernet": "󰀂",
         "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
@@ -162,12 +153,12 @@
         "nospacing": 1,
         "tooltip-format": "{essid} - {ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
-        "format-disconnected": " 󰤠 "
+        "format-disconnected": "󰤠 "
     },
     "bluetooth": {
         "format": "",
         "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format-connected-battery": " {device_alias}",
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",

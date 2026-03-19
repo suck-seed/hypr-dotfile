@@ -27,7 +27,6 @@ link ~/hypr-dotfile/waybar ~/.config/waybar
 link ~/hypr-dotfile/swaync ~/.config/swaync
 link ~/hypr-dotfile/rofi ~/.config/rofi
 link ~/hypr-dotfile/pipewire ~/.config/pipewire
-link ~/hypr-dotfile/nvim ~/.config/nvim
 link ~/hypr-dotfile/hypr ~/.config/hypr
 link ~/hypr-dotfile/ghostty ~/.config/ghostty
 link ~/hypr-dotfile/fish ~/.config/fish
@@ -36,7 +35,7 @@ link ~/hypr-dotfile/cava ~/.config/cava
 link ~/hypr-dotfile/btop ~/.config/btop
 link ~/hypr-dotfile/gtk-3.0 ~/.config/gtk-3.0
 link ~/hypr-dotfile/gtk-4.0 ~/.config/gtk-4.0
-link ~/hypr-dotfile/bongocat.conf ~/.config/bongocat.conf
+link ~/hypr-dotfile/waybar/bongocat.conf ~/.config/waybar/bongocat.conf
 link ~/hypr-dotfile/zed ~/.config/zed
 
 # BASE PACKAGES

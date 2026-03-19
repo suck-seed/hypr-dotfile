@@ -42,7 +42,7 @@ trough {
 		inset 0 0 0 1px #3E4147;
 	border-radius: 12.6px;
 	margin: 18px;
-	background: #252629;
+	background: rgba(37, 38, 41, 0.8);
 	color: #E0E1E4;
 	padding: 0;
 }
@@ -140,7 +140,7 @@ trough {
 		0 0 8px 0 rgba(0, 0, 0, 0.8),
 		inset 0 0 0 1px #3E4147;
 	border-radius: 14px;
-	background-color: #18191B;
+	background: rgba(17, 17, 17, 0.8);
 	color: #E0E1E4;
 	padding: 10px;
 	margin: 10px;
@@ -223,6 +223,7 @@ scrollbar trough {
 
 /* mpris */
 .widget-mpris-player {
+	margin-top: 12px;
 	background: #252629;
 	border-radius: 12.6px;
 	color: #E0E1E4;
