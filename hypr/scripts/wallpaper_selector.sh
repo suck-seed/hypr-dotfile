@@ -29,7 +29,7 @@ ln -sf $SELECTED_PATH $WALLPAPER_DIR/link
 # === SET WALLPAPER ===
 ln -sf $WALLPAPER_DIR/link $SYMLINK_PATH
 
-swww img "$SYMLINK_PATH" --transition-type any --transition-duration 1.5
+swww img "$SYMLINK_PATH" --transition-type any --transition-duration 2
 magick "$SYMLINK_PATH" -resize 1920x1200\> -quality 100 "$HOME/.config/rofi/wallpaper.jpg"
 cp "$HOME/.config/rofi/wallpaper.jpg" "$HOME/.config/wlogout/wallpaper.jpg"
 magick "$HOME/.config/wlogout/wallpaper.jpg" -blur 0x8 ~/.config/wlogout/wallpaper.jpg

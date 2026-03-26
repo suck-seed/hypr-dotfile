@@ -14,19 +14,19 @@
     ],
     // "modules-center" : ["clock"],
     "modules-right": [
-    "temperature",
+    		// "custom/bongocat",
+     		"temperature",
         "backlight",
         "pulseaudio",
         "pulseaudio#microphone",
         "network",
         "bluetooth",
         "battery",
-        "clock",
-        "custom/bongocat"
+        "clock"
     ],
 
     "custom/launch_wofi": {
-        "format": "",
+        "format": "󰏩",
         "on-click": "pkill rofi; ~/.config/rofi/launcher.sh",
         "tooltip": true
     },
@@ -63,110 +63,112 @@
         "exec": " ~/.venvs/waybar-stuffs/bin/python ~/hypr-dotfile/waybar/scripts/waybar-wttr.py"
     },
 
-    "clock": {
-        // "format": "󰥔 {:%I:%M %p, %b %d}",
-        "format": "{:%a %b %d %I:%M}",
-        "tooltip-format": "<span size='15000'><tt>{calendar}</tt></span>",
-        "calendar": {
-            "mode": "month",
-            "format": {
-                "months": "<span color='#908caa'><b>{}</b></span>",
-                "weekdays": "<span color='#908caa'><b>{}</b></span>",
-                "days": "<span color='#575279'><b>{}</b></span>",
-                "today": "<span color='#f6c177'><b>{}</b></span>"
-            }
-        },
-        "on-click": "ghostty -e tty-clock -c -C 5",
-        "height": 26
-    },
+	"temperature": {
+		"thermal-zone": 0,
+		"format": " {temperatureC}°C",
+		"critical-threshold": 70,
+		"format-critical": " {temperatureC}°C",
+		"on-click": "ghostty -e btop"
+	},
 
-    "backlight": {
-        "device": "amdgpu_bl1",
-        "format": "{icon}",
-        "tooltip": false,
-        "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-"
-    },
+	"backlight": {
+		"device": "amdgpu_bl1",
+		"format": "{icon}",
+		"tooltip": false,
+		"format-icons": ["󰃞", "󰃟", "󰃠"],
+		"on-scroll-up": "brightnessctl set 1%+",
+		"on-scroll-down": "brightnessctl set 1%-"
+	},
 
-    "battery": {
-        "states": {
-            "good": 80,
-            "warning": 30,
-            "critical": 20,
-        },
-        "format": "{icon}",
-        "format-charging": "󰚥 {capacity}%",
-        "format-plugged": "󰚥 {capacity}%",
-        "format-alt": "{icon} {capacity}%",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
+	"pulseaudio": {
+		"format": "{icon}",
+		"format-muted": "",
+		"on-click": "pamixer -t",
+		"on-click-right": "pavucontrol",
+		"on-scroll-up": "pamixer -i 5",
+		"on-scroll-down": "pamixer -d 5",
+		"scroll-step": 5,
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		}
+	},
 
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-muted": "",
-        "on-click": "pamixer -t",
-        "on-click-right": "pavucontrol",
-        "on-scroll-up": "pamixer -i 5",
-        "on-scroll-down": "pamixer -d 5",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        }
-    },
+	"pulseaudio#microphone": {
+		"format": "{format_source}",
+		"format-source": "",
+		"format-source-muted": "",
+		"on-click": "bash ~/.config/hypr/scripts/mute_mic_script.sh",
+		"on-click-right": "pavucontrol",
+		"on-scroll-up": "pamixer --default-source -i 5",
+		"on-scroll-down": "pamixer --default-source -d 5",
+		"scroll-step": 5
+	},
 
-    "pulseaudio#microphone": {
-        "format": " {format_source}",
-        "format-source": "",
-        "format-source-muted": "",
-        "on-click": "bash ~/.config/hypr/scripts/mute_mic_script.sh",
-        "on-click-right": "pavucontrol",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
-        "scroll-step": 5
-    },
+	"network": {
+		"on-click": "ghostty -e nmtui",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format": "{icon}",
+		"format-wifi": "{icon}",
+		"format-ethernet": "󰀂",
+		"tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+		"tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+		"tooltip-format-disconnected": "Disconnected",
+		"interval": 3,
+		"nospacing": 1,
+		"tooltip-format": "{essid} - {ifname} via {gwaddr}",
+		"format-linked": "{ifname} (No IP)",
+		"format-disconnected": "󰤠 "
+	},
 
-    "temperature": {
-        "thermal-zone": 0,
-        "format": " {temperatureC}°C",
-        "critical-threshold": 70,
-        "format-critical": " {temperatureC}°C",
-        "on-click": "ghostty -e btop"
-    },
+	"bluetooth": {
+		"format": "",
+		"format-connected": " {device_alias}",
+		"format-connected-battery": " {device_alias}",
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+		"on-click": "rfkill toggle bluetooth"
+	},
 
-    "network": {
-        "on-click": "ghostty -e nmtui",
-        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-        "format": " {icon}",
-        "format-wifi": " {icon}",
-        "format-ethernet": "󰀂",
-        "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-        "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-        "tooltip-format-disconnected": "Disconnected",
-        "interval": 3,
-        "nospacing": 1,
-        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "󰤠 "
-    },
-    "bluetooth": {
-        "format": "",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias}",
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "on-click": "rfkill toggle bluetooth"
-    },
-    "custom/bongocat": {
-        "exec": "echo -e \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
-        "format": "{}"
-    },
+	"battery": {
+		"states": {
+			"good": 80,
+			"warning": 30,
+			"critical": 20
+		},
+		"format": "{icon}",
+		"format-charging": "󰚥 {capacity}%",
+		"format-plugged": "󰚥 {capacity}%",
+		"format-alt": "{icon} {capacity}%",
+		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+	},
+
+	"clock": {
+		// "format": "󰥔 {:%I:%M %p, %b %d}",
+		"format": "{:%a %b %d %I:%M}",
+		"tooltip-format": "<span size='15000'><tt>{calendar}</tt></span>",
+		"calendar": {
+			"mode": "month",
+			"format": {
+				"months": "<span color='#908caa'><b>{}</b></span>",
+				"weekdays": "<span color='#908caa'><b>{}</b></span>",
+				"days": "<span color='#575279'><b>{}</b></span>",
+				"today": "<span color='#f6c177'><b>{}</b></span>",
+			}
+		},
+		"on-click": "ghostty -e tty-clock -c -C 5",
+		"height": 26
+	},
+
+	"custom/bongocat": {
+		"exec": "echo -e \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
+		"format": "{}"
+	}
 }

@@ -21,7 +21,7 @@ BG_PATH="$HOME/.config/hypr/wallpapers/wallpaper.jpg"
 ln -sf ~/.config/hypr/wallpapers/themes/images$SWITCHTO/link "$BG_PATH"
 
 # Show new wallpaper immediately
-swww img "$BG_PATH" --transition-type any --transition-duration 1.5 &
+swww img "$BG_PATH" --transition-type any --transition-duration 2 &
 
 # Generate rofi / wlogout versions in the background
 (

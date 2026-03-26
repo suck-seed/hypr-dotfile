@@ -50,7 +50,7 @@
 		"provider": "none",
 	},
 	"agent_ui_font_size": 16.0,
-	"auto_indent": true,
+	"auto_indent": "syntax_aware",
 	"extend_comment_on_newline": false,
 	"icon_theme": {
 		"mode": "system",
@@ -131,8 +131,8 @@
 	// THEME
 	"theme": {
   "mode": "system",
-  "light": "Fleet Light",
-  "dark": "Fleet Dark"
+  "light": "Zedokai Light (Filter Sun)",
+  "dark": "Zedokai Darker (Filter Spectrum)"
  },
 
 	// PROJETC PANEL IN RIGHT
@@ -167,7 +167,7 @@
 	"ui_font_size": 16.0,
 	"buffer_font_size": 17.0,
 	"buffer_font_family": "CommitMono",
-	"buffer_font_weight": 500,
+	"buffer_font_weight": 550.0,
 	"buffer_font_fallbacks": ["Segoe UI"],
 	"buffer_line_height": { "custom": 1.7 },
 

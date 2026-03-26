@@ -7,7 +7,7 @@ configuration {
 	display-window: " ";
 	display-emoji: "😀";
 	drun-display-format: "{icon} {name}";
-	font: "JetBrainsMono Nerd Font 13";
+	font: "Commit Mono 13";
 	show-icons: true;
     icon-theme: "Neuwaita";
 }
@@ -18,7 +18,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
+    width:                       900px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -68,7 +68,7 @@ inputbar {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "  ";
+    str:                         "  ";
     background-color:            inherit;
     text-color:                  @search;
 }
@@ -83,7 +83,7 @@ entry {
 
 listview {
     enabled:                     true;
-    columns:                     1;
+    columns:                     2;
     lines:                       8;
     cycle:                       true;
     dynamic:                     true;
@@ -135,7 +135,7 @@ element selected.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        42px;
+    size:                        48px;
     cursor:                      inherit;
 }
 element-text {

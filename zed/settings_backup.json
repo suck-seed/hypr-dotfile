@@ -7,13 +7,55 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+	"helix_mode": false,
+	"lsp": {
+		"vtsls": {
+			"settings": {
+				"typescript": {
+					"updateImportsOnFileMove": {
+						"enabled": "always",
+					},
+				},
+				"javascript": {
+					"updateImportsOnFileMove": {
+						"enabled": "always",
+					},
+				},
+			},
+			"enable_lsp_tasks": true,
+		},
+	},
+	"collaboration_panel": {
+		"button": true,
+	},
+	"notification_panel": {
+		"button": false,
+	},
+	"git_panel": {
+		"button": false,
+	},
+	"debugger": {
+		"button": false,
+	},
+	"search": {
+		"button": false,
+	},
+	"diagnostics": {
+		"button": true,
+	},
+	"file_finder": {
+		"git_status": true,
+	},
+	"edit_predictions": {
+		"provider": "none",
+	},
 	"agent_ui_font_size": 16.0,
 	"auto_indent": true,
 	"extend_comment_on_newline": false,
 	"icon_theme": {
 		"mode": "system",
 		"light": "Zed (Default)",
-		"dark": "Colored Zed Icons Theme Dark",
+		"dark": "Zed (Default)",
 	},
 	"disable_ai": true,
 	"inline_code_actions": true,
@@ -24,6 +66,8 @@
 	"use_system_window_tabs": false,
 	"bottom_dock_layout": "contained",
 	"tab_bar": {
+		"show_pinned_tabs_in_separate_row": false,
+		"show_tab_bar_buttons": false,
 		"show_nav_history_buttons": false,
 		"show": true,
 	},
@@ -34,7 +78,7 @@
 		"show_branch_icon": false,
 	},
 	"terminal": {
-		"button": true,
+		"button": false,
 	},
 	"status_bar": {
 		"cursor_position_button": false,
@@ -51,12 +95,13 @@
 		"show": "never",
 	},
 	"gutter": {
-		"folds": false,
-		"breakpoints": true,
-		"runnables": true,
+		"folds": true,
+		"breakpoints": false,
+		"runnables": false,
 	},
 	"rounded_selection": true,
 	"agent": {
+		"button": true,
 		"dock": "left",
 		"default_profile": "ask",
 		"default_model": {
@@ -69,10 +114,6 @@
 	// "icon_theme": "Colored Zed Icons Theme Light",
 
 	// FEATURES
-	"features": {
-		"edit_prediction_provider": "none",
-	},
-
 	// COMPLETIONS
 	"snippet_sort_order": "top",
 
@@ -88,11 +129,7 @@
 	"vim_mode": false,
 
 	// THEME
-	"theme": {
-		"mode": "system",
-		"light": "Catppuccin Latte",
-		"dark": "Fleet Dark Purple",
-	},
+	"theme": "Zedokai Light (Filter Sun)",
 
 	// PROJETC PANEL IN RIGHT
 	"project_panel": {
@@ -100,7 +137,7 @@
 		"starts_open": false,
 		"hide_gitignore": false,
 		"entry_spacing": "standard",
-		"button": true,
+		"button": false,
 		"dock": "right",
 		"indent_size": 20.0,
 		"auto_fold_dirs": false,
@@ -110,6 +147,8 @@
 
 	// OUTLINE
 	"outline_panel": {
+		"git_status": true,
+		"button": false,
 		"dock": "left",
 	},
 
@@ -122,9 +161,9 @@
 	"ui_font_weight": 500.0,
 	"ui_font_family": "SF Pro Text",
 	"ui_font_size": 16.0,
-	"buffer_font_size": 16.0,
-	"buffer_font_weight": 500,
+	"buffer_font_size": 17.0,
 	"buffer_font_family": "CommitMono",
+	"buffer_font_weight": 550.0,
 	"buffer_font_fallbacks": ["Segoe UI"],
 	"buffer_line_height": { "custom": 1.7 },
 
@@ -149,9 +188,9 @@
 	"tabs": {
 		"show_diagnostics": "errors",
 		"show_close_button": "hover",
-		"close_position": "right",
+		"close_position": "left",
 		"git_status": false,
-		"file_icons": true,
+		"file_icons": false,
 	},
 
 	// lsp

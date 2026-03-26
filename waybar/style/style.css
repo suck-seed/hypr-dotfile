@@ -60,13 +60,6 @@ tooltip label {
 	color: @text;
 }
 
-#custom-cava {
-	color: @text;
-	/*color: transparent;
-	background: transparent;
-	opacity: 0;*/
-}
-
 #temperature {
 	color: @text;
 }
@@ -98,7 +91,7 @@ tooltip label {
 }
 
 #custom-launch_wofi {
-	color: @teal;
+	color: @text;
 }
 
 #pulseaudio {
