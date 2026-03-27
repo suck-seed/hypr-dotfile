@@ -131,7 +131,7 @@
 	// THEME
 	"theme": {
   "mode": "system",
-  "light": "Zedokai Light (Filter Sun)",
+  "light": "Zedokai Light",
   "dark": "Zedokai Darker (Filter Spectrum)"
  },
 
@@ -172,7 +172,7 @@
 	"buffer_line_height": { "custom": 1.7 },
 
 	// LINE HIGHLIGHT
-	"current_line_highlight": "gutter",
+	"current_line_highlight": "line",
 	"cursor_shape": "bar",
 
 	// scrollbar

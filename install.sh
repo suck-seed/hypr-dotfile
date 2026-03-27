@@ -99,6 +99,7 @@ paru -S apple-fonts
 # APPLICATION GNOME (love gnome apps)
 echo "[*] Installing GNOME applications, they pretty as hell..."
 sudo pacman -S --needed nwg-look gtk3 gtk4 gsettings-desktop-schemas adwaita-icon-theme dconf glib2 adwaita-cursors loupe papers file-roller gnome-text-editor showtime gnome-boxes gnome-font-viewer gnome-calculator
+sudo pacman -S --needed gaphor curtail
 
 # APPLICATION OTHERS
 paru -S stremio

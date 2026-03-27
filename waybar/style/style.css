@@ -56,6 +56,10 @@ tooltip label {
 	border-radius: 10px;
 }
 
+#custom-clipboard{
+	color: @text;
+}
+
 #clock {
 	color: @text;
 }

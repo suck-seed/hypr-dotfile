@@ -18,11 +18,11 @@ ln -sf ~/.config/waybar/style/style$SWITCHTO.css ~/.config/waybar/style.css
 
 # ------------------------------------ BACKGROUND
 BG_PATH="$HOME/.config/hypr/wallpapers/wallpaper.jpg"
-ln -sf ~/.config/hypr/wallpapers/themes/images$SWITCHTO/link "$BG_PATH"
+ln -sf "$HOME/.config/hypr/wallpapers/themes/images$SWITCHTO/link" "$BG_PATH"
 
-# Show new wallpaper immediately
-swww img "$BG_PATH" --transition-type any --transition-duration 2 &
-
+pgrep -x awww-daemon >/dev/null || awww-daemon &
+sleep 0.2
+awww img "$BG_PATH" &
 # Generate rofi / wlogout versions in the background
 (
   magick "$BG_PATH" -resize 1920x1200\> -quality 100 ~/.config/rofi/wallpaper.jpg

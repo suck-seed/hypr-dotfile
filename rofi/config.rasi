@@ -84,7 +84,7 @@ entry {
 listview {
     enabled:                     true;
     columns:                     2;
-    lines:                       8;
+    lines:                       6;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
