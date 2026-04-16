@@ -8,6 +8,7 @@ for ((i = 0; i < bar_length; i++)); do
 done
 
 config_file="/tmp/bar_cava_config"
+
 cat >"$config_file" <<EOF
 [general]
 bars = 10
@@ -23,5 +24,30 @@ data_format = ascii
 ascii_max_range = 7
 EOF
 
-pkill -f "cava -p $config_file"
-cava -p "$config_file" 2>/dev/null | sed -u "$dict"
+cleanup() {
+    pkill -f "cava -p $config_file" 2>/dev/null
+}
+
+trap cleanup EXIT
+
+is_playing() {
+    status=$(playerctl --player=spotify status 2>/dev/null)
+    [[ "$status" == "Playing" ]]
+}
+
+
+while true; do
+    if is_playing; then
+        cava -p "$config_file" 2>/dev/null | while read -r line; do
+            if is_playing; then
+                echo "$line" | sed -u "$dict"
+            else
+                cleanup
+                break
+            fi
+        done
+    else
+        echo ""
+        sleep 1
+    fi
+done
