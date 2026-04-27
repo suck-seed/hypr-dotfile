@@ -1,4 +1,5 @@
 #custom-launch_wofi,
+#custom-clipboard,
 #custom-bongocat,
 #custom-power_profile,
 #custom-weather,
@@ -12,17 +13,19 @@
 #network,
 #bluetooth,
 #custom-flag,
+#custom-power-profile,
 #backlight {
-	opacity: 1;
+	opacity: 1.0;
 	background: transparent;
 }
 
 * {
-	border: none;
+	/*border: none;*/
 	border-radius: 0px;
 	/*font-family: "Adwaita Mono";*/
 	font-family: "Commit Mono";
 	/*font-family: "SF Mono";*/
+	/*font-family: "Monaspace Krypton NF";*/
 	font-weight: bold;
 	font-size: 15px;
 	min-height: 0;
@@ -33,6 +36,11 @@
 #pulseaudio{
 	padding-left: 14px;
 	padding-right: 14px;
+}
+
+#custom-power-profile{
+	padding-left: 10px;
+	padding-right: 15px;
 }
 
 #custom-clipboard,
@@ -57,7 +65,7 @@
 }
 
 #clock {
-	padding-right: 25px;
+	padding-right: 15px;
 	padding-left: 10px;
 }
 
@@ -69,8 +77,6 @@
 #custom-weather {
 	padding-left: 0px;
 	padding-right: 10px;
-	color: @text;
-	font-weight: 600;
 }
 
 

@@ -7,6 +7,10 @@ window#waybar {
 	/*background: rgba(17, 17, 17, 0.8);*/
 	background: @crustRgba;
 	color: @text;
+	/*border-top: 1px solid #787476;*/
+	border-bottom: 1px solid #787476;
+
+
 }
 
 tooltip * {
@@ -57,6 +61,12 @@ tooltip label {
 	border-radius: 10px;
 }
 
+#custom-weather {
+	color: @text;
+	font-weight: 600;
+}
+
+
 #custom-clipboard{
 	color: @text;
 }
@@ -67,7 +77,7 @@ tooltip label {
 
 
 #temperature {
-	color: @text;
+	color: @purple;
 }
 
 #temperature.critical {
@@ -87,6 +97,11 @@ tooltip label {
 }
 
 
+
+#custom-power_profile.quiet { color: @teal; }
+#custom-power_profile.balanced { color: @purple; }
+#custom-power_profile.performance { color: @orange; }
+
 #bluetooth.on,
 #bluetooth.connected {
 	color: @text;
@@ -99,7 +114,7 @@ tooltip label {
 
 
 #custom-launch_wofi {
-	color: @text;
+	color: @orange;
 
 }
 

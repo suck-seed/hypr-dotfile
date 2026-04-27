@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+	"buffer_font_size": 16.0,
+	"semantic_tokens": "full",
+	"hide_mouse": "never",
+	"agent_servers": {},
 	"helix_mode": false,
 	"lsp": {
 		"vtsls": {
@@ -26,12 +30,11 @@
 		},
 	},
 	"collaboration_panel": {
+		"dock": "left",
 		"button": true,
 	},
-	"notification_panel": {
-		"button": false,
-	},
 	"git_panel": {
+		"dock": "left",
 		"button": false,
 	},
 	"debugger": {
@@ -43,21 +46,18 @@
 	"diagnostics": {
 		"button": true,
 	},
-	"file_finder": {
-		"git_status": true,
-	},
 	"edit_predictions": {
 		"provider": "none",
 	},
 	"agent_ui_font_size": 16.0,
-	"auto_indent": true,
+	"auto_indent": "syntax_aware",
 	"extend_comment_on_newline": false,
 	"icon_theme": {
 		"mode": "system",
 		"light": "Zed (Default)",
 		"dark": "Zed (Default)",
 	},
-	"disable_ai": true,
+	"disable_ai": false,
 	"inline_code_actions": true,
 	"auto_signature_help": true,
 
@@ -88,19 +88,24 @@
 	"toolbar": {
 		"code_actions": false,
 		"agent_review": false,
-		"quick_actions": false,
-		"breadcrumbs": false,
+		"quick_actions": true,
+		"breadcrumbs": true,
 	},
 	"minimap": {
 		"show": "never",
 	},
 	"gutter": {
+		"line_numbers": false,
 		"folds": true,
 		"breakpoints": false,
 		"runnables": false,
 	},
 	"rounded_selection": true,
 	"agent": {
+		"tool_permissions": {
+			"default": "allow",
+			"tools": {},
+		},
 		"button": true,
 		"dock": "left",
 		"default_profile": "ask",
@@ -129,7 +134,11 @@
 	"vim_mode": false,
 
 	// THEME
-	"theme": "Zedokai Light (Filter Sun)",
+	"theme": {
+		"mode": "system",
+		"light": "Fleet Light",
+		"dark": "Fleet Dark",
+	},
 
 	// PROJETC PANEL IN RIGHT
 	"project_panel": {
@@ -159,21 +168,20 @@
 	// FONT
 	// "buffer_line_height": "comfortable",
 	"ui_font_weight": 500.0,
-	"ui_font_family": "SF Pro Text",
-	"ui_font_size": 16.0,
-	"buffer_font_size": 17.0,
+	"ui_font_family": "Inter",
+	"ui_font_size": 15.0,
 	"buffer_font_family": "CommitMono",
 	"buffer_font_weight": 550.0,
 	"buffer_font_fallbacks": ["Segoe UI"],
 	"buffer_line_height": { "custom": 1.7 },
 
 	// LINE HIGHLIGHT
-	"current_line_highlight": "gutter",
+	"current_line_highlight": "line",
 	"cursor_shape": "bar",
 
 	// scrollbar
 	"scrollbar": {
-		"show": "never",
+		"show": "system",
 		"search_results": true,
 		"selected_symbol": true,
 		"diagnostics": "information",

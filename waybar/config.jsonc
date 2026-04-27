@@ -1,33 +1,41 @@
 {
 		"layer": "top",
     "position": "top",
+    // "position": "bottom",
     "mod": "dock",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 35,
+    "height": 30,
     "modules-left": [
         "custom/launch_wofi",
         "hyprland/workspaces",
     		"custom/weather",
+      	"custom/power_profile",
         "custom/cava"
     ],
-    // "modules-center" : ["clock"],
+
+    // "modules-center" : [
+    // 	// "clock"
+   	// 	// "custom/weather"
+    // ],
+
     "modules-right": [
-    		// "custom/bongocat",
-     		"temperature",
-      	"custom/clipboard",
+    		"temperature",
+      	// "custom/clipboard",
         "backlight",
         "pulseaudio",
-        "pulseaudio#microphone",
+        // "pulseaudio#microphone",
         "network",
-        "bluetooth",
+        // "bluetooth",
         "battery",
-        "clock"
+        "clock",
+    		"custom/bongocat"
     ],
 
     "custom/launch_wofi": {
-        "format": "󰏩",
+        // "format": "",
+        "format": "",
         "on-click": "pkill rofi; ~/.config/rofi/launcher.sh",
         "tooltip": true
     },
@@ -46,6 +54,14 @@
             "active": "",
             "default": ""
         }
+    },
+
+    "custom/power_profile": {
+    		"exec": "~/.config/waybar/scripts/power_profile.sh",
+     		"interval": 1,
+      	"on-click": "~/.config/waybar/scripts/power_profile.sh click",
+      	"tooltip": false,
+      	"return-type": "json"
     },
 
     "custom/cava": {
@@ -72,9 +88,9 @@
 
 	"temperature": {
 		"thermal-zone": 0,
-		"format": " {temperatureC}°C",
+		"format": " {temperatureC}",
 		"critical-threshold": 70,
-		"format-critical": " {temperatureC}°C",
+		"format-critical": " {temperatureC}",
 		"on-click": "ghostty -e btop"
 	},
 
@@ -89,7 +105,7 @@
 
 	"pulseaudio": {
 		"format": "{icon}",
-		"format-muted": "",
+		"format-muted": "",
 		"on-click": "pamixer -t",
 		"on-click-right": "pavucontrol",
 		"on-scroll-up": "pamixer -i 5",
@@ -159,7 +175,7 @@
 
 	"clock": {
 		// "format": "󰥔 {:%I:%M %p, %b %d}",
-		"format": "{:%a %b %d %I:%M}",
+		"format": "{:%a %b %d %I:%M %p}",
 		"tooltip-format": "<span size='15000'><tt>{calendar}</tt></span>",
 		"calendar": {
 			"mode": "month",

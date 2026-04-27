@@ -1,0 +1,87 @@
+#custom-launch_wofi,
+#custom-clipboard,
+#custom-bongocat,
+#custom-power_profile,
+#custom-weather,
+#window,
+#custom-cava,
+#clock,
+#battery,
+#pulseaudio,
+#temperature,
+#workspaces,
+#network,
+#bluetooth,
+#custom-flag,
+#custom-power-profile,
+#backlight {
+	opacity: 1;
+	background: transparent;
+}
+
+* {
+	border: none;
+	border-radius: 0px;
+	/*font-family: "Adwaita Mono";*/
+	font-family: "Commit Mono";
+	/*font-family: "SF Mono";*/
+	font-weight: bold;
+	font-size: 15px;
+	min-height: 0;
+}
+
+
+
+#pulseaudio{
+	padding-left: 14px;
+	padding-right: 14px;
+}
+
+#custom-power-profile{
+	padding-left: 10px;
+	padding-right: 15px;
+}
+
+#custom-clipboard,
+#battery,
+#temperature,
+#network,
+#bluetooth,
+#backlight {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#custom-launch_wofi,
+#custom-cava {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#custom-launch_wofi {
+	padding-left: 25px;
+	padding-right: 10px;
+}
+
+#clock {
+	padding-right: 25px;
+	padding-left: 10px;
+}
+
+#custom-bongocat {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+#custom-weather {
+	padding-left: 0px;
+	padding-right: 10px;
+}
+
+
+#custom-cava {
+	color: @text;
+	/*color: transparent;
+	background: transparent;
+	opacity: 0;*/
+}

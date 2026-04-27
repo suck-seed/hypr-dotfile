@@ -1,0 +1,26 @@
+# Fleet Dark - Ghostty Theme
+
+palette = 0=#4a4b4d
+palette = 1=#EB4056
+palette = 2=#82D2CE
+palette = 3=#FAD075
+palette = 4=#4B8DEC
+palette = 5=#EB83E2
+palette = 6=#2CCCE6
+palette = 7=#E0E1E4
+palette = 8=#4a4b4d
+palette = 9=#DB3552
+palette = 10=#009E6F
+palette = 11=#E09119
+palette = 12=#0067E6
+palette = 13=#EB4DDE
+palette = 14=#00BAD6
+palette = 15=#9d9d9f
+
+background = #1E1F21
+foreground = #FFFFFF
+cursor-color = #DFE0E3
+cursor-text = #18191B
+selection-background = #27518F
+selection-foreground = #DEE0E3
+split-divider-color = #3E4147

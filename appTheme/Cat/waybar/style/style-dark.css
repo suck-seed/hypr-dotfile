@@ -1,0 +1,141 @@
+@import "dark.css";
+@import "opacitySet.css";
+
+
+window#waybar {
+	/*background: transparent;*/
+	/*background: rgba(17, 17, 17, 0.8);*/
+	background: @crustRgba;
+	color: @text;
+}
+
+tooltip * {
+	background: transparent;
+}
+
+tooltip {
+	background: @mantle;
+	border-radius: 8px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #c8b6ff;
+	padding: 6px 10px;
+}
+
+tooltip label {
+	color: #cdd6f4;
+	border-radius: 8px;
+	background: transparent;
+}
+
+#workspaces button {
+	color: @subtext1;
+}
+
+#workspaces button.active {
+	color: @text;
+	font-style: italic;
+	font-size: 16px;
+}
+
+#workspaces button.focused {
+	color: @text;
+	background: @surface2;
+	font-style: italic;
+}
+
+#workspaces button.urgent {
+	color: @overlay;
+	background: @red;
+	border-radius: 10px;
+}
+
+#workspaces button:hover {
+	background: @text;
+	color: @crust;
+	font-style: italic;
+	border-radius: 10px;
+}
+
+#custom-weather {
+	color: @text;
+	font-weight: 600;
+}
+
+
+#custom-clipboard{
+	color: @text;
+}
+
+#clock {
+	color: @text;
+}
+
+
+#temperature {
+	color: @text;
+}
+
+#temperature.critical {
+	color: @maroon;
+}
+
+#network.ethernet {
+	color: @text;
+}
+
+#network.disabled {
+	color: @text;
+}
+
+#network.wifi {
+	color: @text;
+}
+
+
+#custom-power-profile{
+	color: @text;
+}
+
+
+#bluetooth.on,
+#bluetooth.connected {
+	color: @text;
+}
+
+#bluetooth.discovering {
+	color: @text;
+}
+
+
+
+#custom-launch_wofi {
+	color: @text;
+
+}
+
+#pulseaudio {
+	color: @text;
+
+}
+
+#pulseaudio.microphone {
+	color: @text;
+
+}
+
+#battery {
+	color: @text;
+}
+
+#battery.critical {
+	color: @maroon;
+}
+
+#battery.warning {
+	color: @red;
+}
+
+#backlight {
+	color: @text;
+}

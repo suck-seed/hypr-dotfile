@@ -17,9 +17,19 @@ if [ "$1" = "click" ]; then
     exit 0
 fi
 
-# Display icon
 case "$CURRENT" in
-    Quiet) echo "  " ;;
-    Balanced) echo " 󰇥 " ;;
-    Performance) echo "  " ;;
+    Quiet)
+        ICON="  "
+        CLASS="quiet"
+        ;;
+    Balanced)
+        ICON=" 󰇥 "
+        CLASS="balanced"
+        ;;
+    Performance)
+        ICON="  "
+        CLASS="performance"
+        ;;
 esac
+
+echo "{\"text\":\"$ICON\",\"class\":\"$CLASS\"}"

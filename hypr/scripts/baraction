@@ -22,7 +22,7 @@ ln -sf "$HOME/.config/hypr/wallpapers/themes/images$SWITCHTO/link" "$BG_PATH"
 
 pgrep -x awww-daemon >/dev/null || awww-daemon &
 sleep 0.2
-awww img "$BG_PATH" &
+awww img --transition-type grow --transition-duration 1 "$BG_PATH" &
 # Generate rofi / wlogout versions in the background
 (
   magick "$BG_PATH" -resize 1920x1200\> -quality 100 ~/.config/rofi/wallpaper.jpg

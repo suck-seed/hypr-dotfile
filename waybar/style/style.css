@@ -6,6 +6,8 @@ window#waybar {
 	/*background: rgba(237, 238, 240, 0.8);*/
 	background: @crustRgba;
 	color: @text;
+	/*border-top: 1px solid #787476;*/
+	border-bottom: 1px solid #787476;
 }
 
 
@@ -56,16 +58,27 @@ tooltip label {
 	border-radius: 10px;
 }
 
+
+#custom-weather {
+	color: @text;
+	font-weight: 600;
+}
+
+
 #custom-clipboard{
 	color: @text;
 }
+
+#custom-power_profile.quiet { color: @teal; }
+#custom-power_profile.balanced { color: @purple; }
+#custom-power_profile.performance { color: @orange; }
 
 #clock {
 	color: @text;
 }
 
 #temperature {
-	color: @text;
+	color: @teal;
 }
 
 #temperature.critical {
@@ -95,17 +108,15 @@ tooltip label {
 }
 
 #custom-launch_wofi {
-	color: @text;
+	color: @teal;
 }
 
 #pulseaudio {
 	color: @text;
-
 }
 
 #pulseaudio.microphone {
 	color: @text;
-
 }
 
 #battery {

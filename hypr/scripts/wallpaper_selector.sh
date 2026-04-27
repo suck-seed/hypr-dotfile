@@ -32,7 +32,7 @@ ln -sf "$WALLPAPER_DIR/link" "$SYMLINK_PATH"
 pgrep -x awww-daemon >/dev/null || awww-daemon &
 sleep 0.2
 
-awww img "$SYMLINK_PATH"
+awww img --transition-type grow --transition-duration 1  "$SYMLINK_PATH"
 
 magick "$SYMLINK_PATH" -resize '1920x1200>' -quality 100 "$HOME/.config/rofi/wallpaper.jpg"
 cp "$HOME/.config/rofi/wallpaper.jpg" "$HOME/.config/wlogout/wallpaper.jpg"

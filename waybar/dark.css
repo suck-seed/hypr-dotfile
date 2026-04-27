@@ -1,13 +1,14 @@
-@define-color pink #E394DC;
-@define-color red #E1465E;
-@define-color maroon #F87C88;
-@define-color yellow #EBC88D;
-@define-color green #A8CC7C;
-@define-color teal #82D2CE;
+@define-color pink #A31D8D;
+@define-color red #C71732;
+@define-color maroon #DC4E4D;
+@define-color yellow #df8e1d;
+@define-color green #37845B;
+@define-color teal #4A6E6E;
 @define-color sky #71A3EF;
-@define-color blue #87C3FF;
-@define-color lavender #AF9CFF;
-
+@define-color blue #4B8DEC;
+@define-color lavender #CBBED8;
+@define-color purple #BCA5EF;
+@define-color orange #F77147;
 
 
 /* TEXT */
@@ -29,4 +30,4 @@
 @define-color base #18191B;
 @define-color mantle #111214;
 @define-color crust #111111;
-@define-color crustRgba rgba(17, 17, 17, 0.7);
+@define-color crustRgba rgba(17, 17, 17, 0.8);

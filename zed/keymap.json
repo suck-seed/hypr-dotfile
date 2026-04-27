@@ -134,5 +134,23 @@
   "bindings": {
    "ctrl-shift-i": "editor::Format"
   }
+ },
+ {
+  "context": "Workspace",
+  "bindings": {
+   "alt-a": "agent::ToggleFocus"
+  }
+ },
+ {
+  "context": "Workspace",
+  "unbind": {
+   "ctrl-?": "agent::ToggleFocus"
+  }
+ },
+ {
+  "context": "ProjectPanel",
+  "bindings": {
+   "alt-r": "workspace::CopyPath"
+  }
  }
 ]
