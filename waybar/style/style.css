@@ -35,7 +35,7 @@ tooltip label {
 #workspaces button.active {
 	color: @text;
 	font-style: italic;
-	font-size: 16px;
+	/*font-size: 16px;*/
 }
 
 #workspaces button.focused {
@@ -69,7 +69,7 @@ tooltip label {
 	color: @text;
 }
 
-#custom-power_profile.quiet { color: @teal; }
+#custom-power_profile.quiet { color: @green; }
 #custom-power_profile.balanced { color: @purple; }
 #custom-power_profile.performance { color: @orange; }
 
@@ -78,7 +78,7 @@ tooltip label {
 }
 
 #temperature {
-	color: @teal;
+	color: @green;
 }
 
 #temperature.critical {
@@ -108,7 +108,7 @@ tooltip label {
 }
 
 #custom-launch_wofi {
-	color: @teal;
+	color: @purple;
 }
 
 #pulseaudio {

@@ -79,7 +79,7 @@
 	},
 	"terminal": {
 		"font_weight": 500.0,
-		"font_family": "SF Compact",
+		"font_family": "CommitMono",
 		"button": false,
 	},
 	"status_bar": {
@@ -138,8 +138,8 @@
 	// THEME
 	"theme": {
 		"mode": "system",
-		"light": "Neovim default accented light",
-		"dark": "Neovim default accented dark",
+		"light": "VSCode Modern Light",
+		"dark": "VSCode Modern Dark",
 	},
 
 	// PROJETC PANEL IN RIGHT

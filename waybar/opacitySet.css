@@ -54,7 +54,8 @@
 }
 
 #custom-launch_wofi,
-#custom-cava {
+#custom-cava,
+#window{
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -65,7 +66,7 @@
 }
 
 #clock {
-	padding-right: 15px;
+	padding-right: 25px;
 	padding-left: 10px;
 }
 

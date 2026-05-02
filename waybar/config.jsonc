@@ -6,13 +6,14 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 30,
+    "height": 27,
     "modules-left": [
         "custom/launch_wofi",
         "hyprland/workspaces",
     		"custom/weather",
       	"custom/power_profile",
-        "custom/cava"
+       "hyprland/window"
+        // "custom/cava"
     ],
 
     // "modules-center" : [
@@ -29,8 +30,8 @@
         "network",
         // "bluetooth",
         "battery",
-        "clock",
-    		"custom/bongocat"
+        "clock"
+    		// "custom/bongocat"
     ],
 
     "custom/launch_wofi": {
@@ -45,7 +46,7 @@
         "on-scroll-down": "hyprctl dispatch workspace r-1",
         "on-click": "activate",
         "active-only": true,
-        "persistent-workspaces": { "*": 3 },
+        // "persistent-workspaces": { "*": 3 },
         "all-outputs": true,
         "format": "{}",
         "tooltip": false,
@@ -54,6 +55,12 @@
             "active": "",
             "default": ""
         }
+    },
+
+    "hyprland/window": {
+    		"format": "~ {initialClass}",   // <--- these is the default value
+      	// "icon" : true,
+       // "icon-size" : 16
     },
 
     "custom/power_profile": {
