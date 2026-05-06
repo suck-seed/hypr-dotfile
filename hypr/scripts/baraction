@@ -37,10 +37,15 @@ if [ "$SWITCHTO" = "-dark" ]; then
 	gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 
-# QUICKSHELL
-	ln -sf ~/.config/quickshell/Commons/ThemeDark.qml ~/.config/quickshell/Commons/Theme.qml
 
 	ln -sf ~/.config/hypr/theme/dark.conf ~/.config/hypr/hyprland/theme.conf
+
+# SWAYNC
+ln -sf ~/.config/swaync/style/color-dark.css ~/.config/swaync/style/color.css
+
+
+# ------------------------------------ ROFI
+ln -sf ~/.config/rofi/themes/colors/colors.dark.rasi ~/.config/rofi/themes/colors/colors.rasi
 
 else
 
@@ -49,18 +54,22 @@ else
 	gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3'
     gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
 
-# QUICKSHELL
-	ln -sf ~/.config/quickshell/Commons/ThemeLight.qml ~/.config/quickshell/Commons/Theme.qml
 
 	ln -sf ~/.config/hypr/theme/light.conf ~/.config/hypr/hyprland/theme.conf
+
+# SWAYNC
+ln -sf ~/.config/swaync/style/color-light.css ~/.config/swaync/style/color.css
+
+# ------------------------------------ ROFI
+ln -sf ~/.config/rofi/themes/colors/colors.light.rasi ~/.config/rofi/themes/colors/colors.rasi
 
 fi
 
 # ------------------------------------ ROFI
-ln -sf ~/.config/rofi/style/style$SWITCHTO.rasi ~/.config/rofi/style.rasi
+# ln -sf ~/.config/rofi/style/style$SWITCHTO.rasi ~/.config/rofi/style.rasi
 
 # ------------------------------------ SWAYNC
-ln -sf ~/.config/swaync/style/style$SWITCHTO.css ~/.config/swaync/style.css
+# ln -sf ~/.config/swaync/style/style$SWITCHTO.css ~/.config/swaync/style.css
 
 # ------------------------------------ SWAYNC RELOAD
 pkill -SIGUSR2 swaync
