@@ -7,10 +7,6 @@ window#waybar {
 	/*background: rgba(17, 17, 17, 0.8);*/
 	background: @crustRgba;
 	color: @text;
-	/*border-top: 1px solid #787476;*/
-	border-bottom: 1px solid #787476;
-
-
 }
 
 tooltip * {

@@ -31,45 +31,44 @@ awww img --transition-type grow --transition-duration 1 "$BG_PATH" &
 ) &
 
 if [ "$SWITCHTO" = "-dark" ]; then
-	# copy config files gtk4
-    # ln -sf ~/.themes/Catppuccin-BL-LB-Dark/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0
-    # ln -sf ~/.themes/Catppuccin-BL-LB-Dark/gtk-4.0/gtk.css ~/.config/gtk-4.0
-    # ln -sf ~/.themes/Catppuccin-BL-LB-Dark/gtk-4.0/assets/ ~/.config/gtk-4.0
-    # gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-BL-LB-Dark'
 
+# GTK
     gsettings set org.gnome.desktop.interface icon-theme "Neuwaita"
 	gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-    # gsettings set org.gnome.desktop.interface icon-theme "Newaita-reborn-light-brown"
-else
- # copy config files gtk4
-    # ln -sf ~/.themes/Catppuccin-BL-LB-Light/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0
-    # ln -sf ~/.themes/Catppuccin-BL-LB-Light/gtk-4.0/gtk.css ~/.config/gtk-4.0
-    # ln -sf ~/.themes/Catppuccin-BL-LB-Light/gtk-4.0/assets/ ~/.config/gtk-4.0
-    # gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-BL-LB-Light'
 
+# QUICKSHELL
+	ln -sf ~/.config/quickshell/Commons/ThemeDark.qml ~/.config/quickshell/Commons/Theme.qml
+
+	ln -sf ~/.config/hypr/theme/dark.conf ~/.config/hypr/hyprland/theme.conf
+
+else
+
+# GTK
     gsettings set org.gnome.desktop.interface icon-theme "Neuwaita"
 	gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3'
     gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
-    # gsettings set org.gnome.desktop.interface icon-theme "Newaita-reborn-light-brown-dark"
+
+# QUICKSHELL
+	ln -sf ~/.config/quickshell/Commons/ThemeLight.qml ~/.config/quickshell/Commons/Theme.qml
+
+	ln -sf ~/.config/hypr/theme/light.conf ~/.config/hypr/hyprland/theme.conf
+
 fi
 
 # ------------------------------------ ROFI
 ln -sf ~/.config/rofi/style/style$SWITCHTO.rasi ~/.config/rofi/style.rasi
 
-# ------------------------------------ KITTY
-ln -sf ~/.config/kitty/style/$KITTYTHEME.conf ~/.config/kitty/style.conf
-
 # ------------------------------------ SWAYNC
 ln -sf ~/.config/swaync/style/style$SWITCHTO.css ~/.config/swaync/style.css
+
 # ------------------------------------ SWAYNC RELOAD
 pkill -SIGUSR2 swaync
-# pkill -SIGUSR2 nautilus
 
 # ------------------------------------ HYPRLOCK
 ln -sf ~/.config/hypr/hyprlock/hyprlock$SWITCHTO.conf ~/.config/hypr/hyprlock.conf
 
-# spicetify apply
+
 
 # ------------------------------------ RESTART WAYBAR
 # killall -SIGUSR2 waybar

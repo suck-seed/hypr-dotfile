@@ -78,7 +78,8 @@
 		"show_onboarding_banner": false,
 	},
 	"terminal": {
-		"font_weight": 500.0,
+		"font_size": 15.0,
+  "font_weight": 500.0,
 		"font_family": "CommitMono",
 		"button": false,
 	},

@@ -1,0 +1,321 @@
+@theme "/dev/null"
+
+@import "~/.config/rofi/style.rasi"
+
+
+
+configuration {
+    modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+
+    display-drun:               "App";
+    display-run:                "Run";
+    display-filebrowser:        "File";
+    display-window:             "Win";
+
+    drun-display-format:        "{icon} {name}";
+    hover-select:               true;
+    me-select-entry:            "MouseSecondary";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+    icon-theme:                 "Neuwaita";
+
+}
+
+/* ------------------------------
+   Global Colors
+--------------------------------*/
+* {
+    font-weight:                600;
+
+    background:                 @crust;
+    background-alt:             @surface-container;
+    selected:                   @primary;
+    active:                     @primary-container;
+    urgent:                     @error;
+
+    text-color:                 @on-surface;
+    text-selected:              @on-secondary;
+    border-color:               @search;
+}
+
+/* ------------------------------
+   Window
+--------------------------------*/
+window {
+    enabled:                    true;
+    fullscreen:                 false;
+    transparency:               "real";
+    cursor:                     "default";
+
+    location:                   center;
+    anchor:                     center;
+
+    width:                      50%;
+    height:                     540px;
+
+    spacing:                    0px;
+    padding:                    0px;
+
+    border:                     1px;
+    border-radius:              16px;
+    border-color:               @border-color;
+
+    background-color:           @background;
+}
+
+/* ------------------------------
+   Main Box
+--------------------------------*/
+mainbox {
+    enabled:                    true;
+
+    padding:                    10px;
+    spacing:                    0px;
+
+    orientation:                vertical;
+    children:                   [ "inputbar", "listbox" ];
+
+    background-color:           transparent;
+}
+
+/* ------------------------------
+   Top Wallpaper Banner
+--------------------------------*/
+inputbar {
+    enabled:                    true;
+
+    padding:                    10px 10px 120px 10px;
+    margin:                     6px;
+
+    border-radius:              16px;
+    background-color:           transparent;
+
+    orientation:                horizontal;
+    children:                   [ "entry", "dummy", "mode-switcher" ];
+
+    background-image:           url("~/.config/rofi/wallpaper.jpg", width);
+}
+
+/* ------------------------------
+   Search Entry
+--------------------------------*/
+entry {
+    enabled:                    true;
+    expand:                     false;
+
+    width:                      23%;
+    padding:                    10px 10px;
+
+    border-radius:              12px;
+    background-color:           @on-primary;
+    text-color:                 @search;
+
+    font:                       "Commit Mono 14";
+
+    cursor:                     text;
+
+    placeholder:                " ";
+    placeholder-color:          inherit;
+}
+
+/* ------------------------------
+   Dummy Spacer
+--------------------------------*/
+dummy {
+    expand:                     true;
+    background-color:           transparent;
+}
+
+/* ------------------------------
+   Mode Switcher
+--------------------------------*/
+mode-switcher {
+    enabled:                    true;
+
+    spacing:                    7px;
+    background-color:           transparent;
+}
+
+button {
+    enabled:                    true;
+
+    width:                      60px;
+    padding:                    7px 8px;
+
+    border-radius:              12px;
+    background-color:           @on-primary;
+    text-color:                 @search;
+
+    font:                       "Commit Mono 12";
+
+    cursor:                     pointer;
+}
+
+button selected {
+    background-color:           @selected;
+    text-color:                 @text-selected;
+}
+
+/* ------------------------------
+   Listbox
+--------------------------------*/
+listbox {
+    enabled:                    true;
+
+    spacing:                    16px;
+    padding:                    14px 16px 16px 16px;
+
+    orientation:                vertical;
+    children:                   [ "message", "listview" ];
+
+    background-color:           transparent;
+}
+
+/* ------------------------------
+   Listview
+--------------------------------*/
+listview {
+    enabled:                    true;
+
+    columns:                    2;
+    lines:                      6;
+
+    cycle:                      true;
+    dynamic:                    true;
+    scrollbar:                  false;
+
+    layout:                     vertical;
+    reverse:                    false;
+
+    fixed-height:               false;
+    fixed-columns:              true;
+
+    spacing:                    10px;
+
+    background-color:           transparent;
+    border:                     0px;
+}
+
+/* Fully disable scrollbar visuals */
+scrollbar {
+    enabled:                    false;
+    width:                      0px;
+    handle-width:               0px;
+    border:                     0px;
+    padding:                    0px;
+}
+
+/* ------------------------------
+   Elements
+--------------------------------*/
+element {
+    enabled:                    true;
+
+    spacing:                    8px;
+    padding:                    7px 10px;
+
+    border-radius:              10px;
+    background-color:           transparent;
+
+    text-color:                 @text-color;
+    cursor:                     pointer;
+}
+
+element normal.normal {
+    background-color:           transparent;
+    text-color:                 inherit;
+}
+
+element normal.urgent {
+    background-color:           @urgent;
+    text-color:                 @on-error;
+}
+
+element normal.active {
+    background-color:           @active;
+    text-color:                 @on-primary-container;
+}
+
+element selected.normal {
+    background-color:           @selected;
+    text-color:                 @text-selected;
+}
+
+element selected.urgent {
+    background-color:           @urgent;
+    text-color:                 @on-error;
+}
+
+element selected.active {
+    background-color:           @selected;
+    text-color:                 @text-selected;
+}
+
+element alternate.normal {
+    background-color:           transparent;
+    text-color:                 inherit;
+}
+
+element alternate.urgent {
+    background-color:           transparent;
+    text-color:                 inherit;
+}
+
+element alternate.active {
+    background-color:           transparent;
+    text-color:                 inherit;
+}
+
+/* App icons */
+element-icon {
+    enabled:                    true;
+
+    background-color:           transparent;
+    text-color:                 inherit;
+
+    size:                       36px;
+    cursor:                     inherit;
+}
+
+/* App names */
+element-text {
+    enabled:                    true;
+
+    background-color:           transparent;
+    text-color:                 inherit;
+
+    font:                       "Commit Mono 14";
+
+    cursor:                     inherit;
+
+    vertical-align:             0.5;
+    horizontal-align:           0.0;
+}
+
+/* ------------------------------
+   Message / Error
+--------------------------------*/
+message {
+    background-color:           transparent;
+    border:                     0px;
+}
+
+textbox {
+    padding:                    10px;
+
+    border-radius:              12px;
+    background-color:           @on-primary;
+    text-color:                 @on-surface;
+
+    vertical-align:             0.5;
+    horizontal-align:           0.0;
+}
+
+error-message {
+    padding:                    10px;
+
+    border-radius:              12px;
+    background-color:           @error-container;
+    text-color:                 @on-error-container;
+}

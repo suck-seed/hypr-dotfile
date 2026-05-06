@@ -6,12 +6,11 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 27,
+    "height": 30,
     "modules-left": [
         "custom/launch_wofi",
         "hyprland/workspaces",
     		"custom/weather",
-      	"custom/power_profile",
        "hyprland/window"
         // "custom/cava"
     ],
@@ -22,6 +21,7 @@
     // ],
 
     "modules-right": [
+   			"custom/power_profile",
     		"temperature",
       	// "custom/clipboard",
         "backlight",
@@ -36,7 +36,9 @@
 
     "custom/launch_wofi": {
         // "format": "",
-        "format": "",
+        // "format": "",
+        // "format": "󰻉",
+        "format": "",
         "on-click": "pkill rofi; ~/.config/rofi/launcher.sh",
         "tooltip": true
     },
@@ -59,8 +61,8 @@
 
     "hyprland/window": {
     		"format": "~ {initialClass}",   // <--- these is the default value
-      	// "icon" : true,
-       // "icon-size" : 16
+      	"icon" : true,
+       "icon-size" : 18
     },
 
     "custom/power_profile": {
